@@ -28,3 +28,9 @@ In order to use this custom character sheets you must have a PRO account with Ro
 1) Press `Save Script` and ensure that the console window at the bottom starts talking about restarting the sandbox and spinning up a new one
 
 Once all of the above steps are completed you're done! You should be able to create a new character in your Launched game.
+
+# TODO
+1) Beautify talents and specializations
+2) Take care of HTML/CSS of the rest of the sheet
+3) Possibly convert multiple buttons into dropdowns
+ 

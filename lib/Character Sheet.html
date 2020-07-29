@@ -45,16 +45,18 @@
                 </div>
             </div>
         </div>
+        <!-- Talents and specializations section -->
         <div class="section">
-            <div class="black-bar lightgray-border">
-                <label class="white-text">Talents</label>
-                <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
-                <span class="white-text float-right">&plusmn;</span>
+            <div class="black-bar lightgray-border section-wrapper position-relative">
+                <input type="checkbox" class="section-title-unhide position-absolute" />
+                <h1>Talents</h1>
                 <div class="help-text padding-bottom-20">
-                    Your character has areas of natural aptitude and special training called talents. They provide a way to customize your character that goes beyond their background.
+                    Your character has areas of natural aptitude and special training called talents.
+                    They provide a way to customize your character that goes beyond their background.
                 </div>
                 <!-- Selected Talents -->
                 <div class="focuses padding-bottom-20">
+                    <!-- Affluent -->
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
                         <input type="number" disabled="true" name="attr_income_mod_1" class="invisible" value="@{talent_affluent}*((@{talent_affluent_novice}*2)+@{talent_affluent_expert}+@{talent_affluent_master})" />
@@ -63,35 +65,36 @@
                                 <label class="white-text">Affluent</label>
                                 <button type="action" name="act_select_talent_affluent" class="white-text btn-invisible float-right">X</button>
                             </div>
-                            <div class="justify">
+                            <div class="justify position-relative">
                                 <p>You have access to greater resources than most.</p>
-                                <p><strong>Requirements</strong> None.</p>
-                                <input type="checkbox" class="unhide-content styled-sibling" />
-                                <span>&plusmn; Show More</span>
-                                <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> When you select this talent, your Income is increased by +2 <strong>(Done automatically)</strong>.</p>
-                                    <p><strong>Expert</strong> When you gain this degree, your Income is increased by +1 <strong>(Done automatically)</strong>. You may add 2 to your Income score when comparing your score with an item’s cost to purchase it automatically, without a test, or to determine whether the purchase will deplete your Income. You enjoy this benefit only once per game session, and you must choose whether it applies to an automatic purchase or to avoid depleting your Income.</p>
-                                    <p><strong>Master</strong> When you gain this degree, your Income is increased by +1 <strong>(Done automatically)</strong>. You can re-roll a failed Income test, but must keep the result of the second roll.</p>
+                                <p><strong>Requirements: </strong> None.</p>
+                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_affluent_novice" class="styled-toggle" value="1" checked/>
+                                        <span class="prof-button-text">NOV</span>
+                                    </span>
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_affluent_expert" class="styled-toggle" value="1" />
+                                        <span class="prof-button-text">EXP</span>
+                                    </span>
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_affluent_master" class="styled-toggle" value="1" />
+                                        <span class="prof-button-text">MAS</span>
+                                    </span>
                                 </div>
-                            </div>
-
-                            <div class="dynamic-subsection justify">
-                                <span>
-                                    <input type="checkbox" name="attr_talent_affluent_novice" class="styled-sibling" value="1" checked/>
-                                    <span>&plusmn; Novice</span>
-                                </span>
-                                &nbsp;
-                                <span>
-                                    <input type="checkbox" name="attr_talent_affluent_expert" class="styled-sibling" value="1" />
-                                    <span>&plusmn; Expert</span>
-                                </span>
-                                <div>
-                                    <input type="checkbox" name="attr_talent_affluent_master" class="styled-sibling" value="1" />
-                                    <span>&plusmn; Master</span>
+                                <div class="showmoreparent position-relative margin-top-20">
+                                    <input type="checkbox" class="unhide-content styled-show-more position-absolute" />
+                                    <div class="check-label position-absolute">Description</div>
+                                    <div class="hidden-if-unchecked padding-top-30">
+                                        <p><strong>Novice</strong><br/>When you select this talent, your Income is increased by +2 <strong>(Done automatically)</strong>.</p>
+                                        <p><strong>Expert</strong><br/>When you gain this degree, your Income is increased by +1 <strong>(Done automatically)</strong>. You may add 2 to your Income score when comparing your score with an item’s cost to purchase it automatically, without a test, or to determine whether the purchase will deplete your Income. You enjoy this benefit only once per game session, and you must choose whether it applies to an automatic purchase or to avoid depleting your Income.</p>
+                                        <p><strong>Master</strong><br/>When you gain this degree, your Income is increased by +1 <strong>(Done automatically)</strong>. You can re-roll a failed Income test, but must keep the result of the second roll.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Agility -->
                     <div>
                         <input type="checkbox" id="select_talent_agility" name="attr_talent_agility" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -99,35 +102,36 @@
                                 <label class="white-text">Agility</label>
                                 <button type="action" name="act_select_talent_agility" class="white-text btn-invisible float-right">X</button>
                             </div>
-                            <div class="justify">
+                            <div class="justify position-relative">
                                 <p>You move with grace, speed, and ease.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
-                                <input type="checkbox" class="unhide-content styled-sibling" />
-                                <span>&plusmn; Show More</span>
-                                <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> Every move you make is part of one fluid motion. Using the Move action to stand up, climb, dismount, etc. does not reduce your Speed.</p>
-                                    <p><strong>Expert</strong> When you move, terrain-based hazards do not reduce your Speed. When you fall, if you succeed at a Dexterity (Acrobatics) test with a TN determined by the GM based on height and nearby surfaces, you suffer only half damage.</p>
-                                    <p><strong>Master</strong> Impressive acrobatics are just the way you naturally move. You can re-roll any die result of 1 on each die for Dexterity (Acrobatics), Stamina (Running), and Strength (Climbing, Jumping) tests, but must keep the results of the second roll.</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
+                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_agility_novice" class="styled-toggle" value="1" checked/>
+                                        <span class="prof-button-text">NOV</span>
+                                    </span>
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_agility_expert" class="styled-toggle" value="1" />
+                                        <span class="prof-button-text">EXP</span>
+                                    </span>
+                                    <span class="prof-button sheet-position-relative">
+                                        <input type="checkbox" name="attr_talent_agility_master" class="styled-toggle" value="1" />
+                                        <span class="prof-button-text">MAS</span>
+                                    </span>
                                 </div>
-                            </div>
-
-                            <div class="dynamic-subsection justify">
-                                <span>
-                                    <input type="checkbox" name="attr_talent_agility_novice" class="styled-sibling" value="1" checked/>
-                                    <span>&plusmn; Novice</span>
-                                </span>
-                                &nbsp;
-                                <span>
-                                    <input type="checkbox" name="attr_talent_agility_expert" class="styled-sibling" value="1" />
-                                    <span>&plusmn; Expert</span>
-                                </span>
-                                <div>
-                                    <input type="checkbox" name="attr_talent_agility_master" class="styled-sibling" value="1" />
-                                    <span>&plusmn; Master</span>
+                                <div class="showmoreparent position-relative margin-top-20">
+                                    <input type="checkbox" class="unhide-content styled-show-more position-absolute" />
+                                    <div class="check-label position-absolute">Description</div>
+                                    <div class="hidden-if-unchecked padding-top-30">
+                                        <p><strong>Novice</strong><br/>Every move you make is part of one fluid motion. Using the Move action to stand up, climb, dismount, etc. does not reduce your Speed.</p>
+                                        <p><strong>Expert</strong><br/>When you move, terrain-based hazards do not reduce your Speed. When you fall, if you succeed at a Dexterity (Acrobatics) test with a TN determined by the GM based on height and nearby surfaces, you suffer only half damage.</p>
+                                        <p><strong>Master</strong><br/>Impressive acrobatics are just the way you naturally move. You can re-roll any die result of 1 on each die for Dexterity (Acrobatics), Stamina (Running), and Strength (Climbing, Jumping) tests, but must keep the results of the second roll.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Artistry -->
                     <div>
                         <input type="checkbox" id="select_talent_artistry" name="attr_talent_artistry" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -137,7 +141,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can create fine works of art. For the performing arts, see the Performance talent.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus.</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -164,6 +168,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Attractive -->
                     <div>
                         <input type="checkbox" id="select_talent_attractive" name="attr_talent_attractive" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -173,7 +178,7 @@
                             </div>
                             <div class="justify">
                                 <p>You have that special something that catches and holds people’s attention and interest.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -200,6 +205,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Burglary -->
                     <div>
                         <input type="checkbox" id="select_talent_burglary" name="attr_talent_burglary" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -209,7 +215,7 @@
                             </div>
                             <div class="justify">
                                 <p>You know how to bypass security to enter a place and take anything that strikes your fancy.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -236,6 +242,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Carouising -->
                     <div>
                         <input type="checkbox" id="select_talent_carousing" name="attr_talent_carousing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -245,7 +252,7 @@
                             </div>
                             <div class="justify">
                                 <p>You take your fun seriously, and use it to good effect.</p>
-                                <p><strong>Requirements</strong> Communication and Constitution 1 or higher.</p>
+                                <p><strong>Requirements: </strong> Communication and Constitution 1 or higher.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -272,6 +279,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Command -->
                     <div>
                         <input type="checkbox" id="select_talent_command" name="attr_talent_command" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
@@ -281,7 +289,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a skilled and capable leader.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher.</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -317,7 +325,7 @@
                             </div>
                             <div class="justify">
                                 <p>You know people, sometimes in the unlikeliest places.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher.</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -353,7 +361,7 @@
                             </div>
                             <div class="justify">
                                 <p>You have the skills to heal wounds and treat illness and other conditions.</p>
-                                <p><strong>Requirements</strong> Intelligence (Medicine) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence (Medicine) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -389,7 +397,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can fight in hand-to-hand combat with a weapon in your primary hand and another in your off-hand (a secondary weapon). Unless otherwise stated, attacks come from the primary weapon.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -425,7 +433,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a specialist in your field.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -536,7 +544,7 @@
                             </div>
                             <div class="justify">
                                 <p>You know how to navigate and survive on the fringes of civilization.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -572,7 +580,7 @@
                             </div>
                             <div class="justify">
                                 <p>You’re skilled in restraining and subduing opponents in unarmed combat.</p>
-                                <p><strong>Requirements</strong> Fighting (Grappling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Grappling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -608,7 +616,7 @@
                             </div>
                             <div class="justify">
                                <p>Computer security systems and safeguards are more suggestions to you than anything else.</p>
-                                <p><strong>Requirements</strong> Intelligence (Security) and Intelligence (Technology) focuses</p>
+                                <p><strong>Requirements: </strong> Intelligence (Security) and Intelligence (Technology) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -644,7 +652,7 @@
                             </div>
                             <div class="justify">
                                 <p>Whatever the situation is, you’re sure you can handle it.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or Willpower 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -680,7 +688,7 @@
                             </div>
                             <div class="justify">
                                 <p>Your words and presence motivate others to action. The benefits of Inspire do not stack, if you happen to have multiple characters on the same side who have it, other than their ability to continue inspiring their side after one or more of them has been taken out.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -716,7 +724,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a master of secrets.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -762,7 +770,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can bring your considerable knowledge to bear on any situation.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -798,7 +806,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can bring your considerable knowledge to bear on any situation.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -873,7 +881,7 @@
                             </div>
                             <div class="justify">
                                 <p>You pick up new languages easily. When you learn a new language, you learn to both speak and read it.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -914,7 +922,7 @@
                             </div>
                             <div class="justify">
                                 <p>Make-it-yourself is your motto and you use manufacturing focuses to do just that. Use Dexterity (Craft) for most handcrafted and artistic items and Intelligence (Engineering) for most technological items. The GM may approve other manufacturing focuses as appropriate for certain items.</p>
-                                <p><strong>Requirements</strong> Any manufacturing focus (see above)</p>
+                                <p><strong>Requirements: </strong> Any manufacturing focus (see above)</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -952,7 +960,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can treat certain conditions in the field.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -991,7 +999,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can sow confusion among friends and foes alike.</p>
-                                <p><strong>Requirements</strong> Communication (Deception) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Deception) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling"/>
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1038,7 +1046,7 @@
                             </div>
                             <div class="justify">
                                 <p>You have an eye for detail.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling"/>
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1101,7 +1109,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a skilled public speaker who can sway others with your words.</p>
-                                <p><strong>Requirements</strong> Communication (Persuasion) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1137,7 +1145,7 @@
                             </div>
                             <div class="justify">
                                 <p>In hand-to-hand combat, you are relentless and overwhelming.</p>
-                                <p><strong>Requirements</strong> Fighting 2 or higher</p>
+                                <p><strong>Requirements: </strong> Fighting 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1173,7 +1181,7 @@
                             </div>
                             <div class="justify">
                                 <p>You have a talent for the performing arts.</p>
-                                <p><strong>Requirements</strong> Communication (Performing) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1213,7 +1221,7 @@
                             </div>
                             <div class="justify">
                                 <p>Any vehicle under your control becomes like an extension of yourself.</p>
-                                <p><strong>Requirements</strong> Dexterity (Driving or Piloting) focus</p>
+                                <p><strong>Requirements: </strong> Dexterity (Driving or Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1249,7 +1257,7 @@
                             </div>
                             <div class="justify">
                                 <p>If you can see it, you can hit it. Hard.</p>
-                                <p><strong>Requirements</strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
+                                <p><strong>Requirements: </strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1285,7 +1293,7 @@
                             </div>
                             <div class="justify">
                                 <p>Between the quick and the dead, you prefer the former.</p>
-                                <p><strong>Requirements</strong> Accuracy (Pistols) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy (Pistols) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1321,7 +1329,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are the shield that protects your friends.</p>
-                                <p><strong>Requirements</strong> Perception and Willpower 1 or higher</p>
+                                <p><strong>Requirements: </strong> Perception and Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1357,7 +1365,7 @@
                             </div>
                             <div class="justify">
                                 <p>You react to threats instantly and instinctually.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1393,7 +1401,7 @@
                             </div>
                             <div class="justify">
                                 <p>A rifle is far more dangerous in your hands.</p>
-                                <p><strong>Requirements</strong> Accuracy (Rifles) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1429,7 +1437,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are skilled in reconnaissance and infiltration.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1465,7 +1473,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are trained in martial arts focused on defense and deflection.</p>
-                                <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1501,7 +1509,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can fight more effectively wielding a single-handed melee weapon.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1537,7 +1545,7 @@
                             </div>
                             <div class="justify">
                                 <p>By training or raw talent, your unarmed strikes leave a lasting impression.</p>
-                                <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1573,7 +1581,7 @@
                             </div>
                             <div class="justify">
                                 <p>You move calmly and expertly while in combat.</p>
-                                <p><strong>Requirements</strong> Dexterity and Perception 1 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity and Perception 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1609,7 +1617,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are adept with weapons thrown by hand.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1645,7 +1653,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are deadly with heavy melee weapons.</p>
-                                <p><strong>Requirements</strong> Strength 3 or higher and Fighting 1 or higher</p>
+                                <p><strong>Requirements: </strong> Strength 3 or higher and Fighting 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1675,7 +1683,7 @@
                 </div>
                 <!-- Unselected talents -->
                 <div class="focuses hidden-if-unchecked">
-                    <div class="unselected-items">Select talents</div>
+                    <div class="unselected-items">Add talents</div>
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-checked dynamic-content">
@@ -1684,7 +1692,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have access to greater resources than most.</p>
-                                <p><strong>Requirements</strong> None.</p>
+                                <p><strong>Requirements: </strong> None.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1705,7 +1713,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You move with grace, speed, and ease.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1726,7 +1734,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can create fine works of art. For the performing arts, see the Performance talent.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1745,7 +1753,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have that special something that catches and holds people’s attention and interest.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1766,7 +1774,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know how to bypass security to enter a place and take anything that strikes your fancy</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1787,7 +1795,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You take your fun seriously, and use it to good effect.</p>
-                                <p><strong>Requirements</strong> Communication and Constitution 1 or higher</p>
+                                <p><strong>Requirements: </strong> Communication and Constitution 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1808,7 +1816,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a skilled and capable leader.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1828,7 +1836,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know people, sometimes in the unlikeliest places.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1849,7 +1857,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have the skills to heal wounds and treat illness and other conditions.</p>
-                                <p><strong>Requirements</strong> Intelligence (Medicine) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence (Medicine) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1870,7 +1878,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can fight in hand-to-hand combat with a weapon in your primary hand and another in your off-hand (a secondary weapon). Unless otherwise stated, attacks come from the primary weapon.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1889,7 +1897,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a specialist in your field.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1910,7 +1918,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know how to navigate and survive on the fringes of civilization.</p>
-                                <p><strong>Requirements</strong> Communication 1 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1931,7 +1939,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re skilled in restraining and subduing opponents in unarmed combat.</p>
-                                <p><strong>Requirements</strong> Fighting (Grappling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Grappling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1952,7 +1960,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Computer security systems and safeguards are more suggestions to you than anything else.</p>
-                                <p><strong>Requirements</strong> Intelligence (Security) and Intelligence (Technology) focuses</p>
+                                <p><strong>Requirements: </strong> Intelligence (Security) and Intelligence (Technology) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1973,7 +1981,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Whatever the situation is, you’re sure you can handle it.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or Willpower 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -1994,7 +2002,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Your words and presence motivate others to action. The benefits of Inspire do not stack, if you happen to have multiple characters on the same side who have it, other than their ability to continue inspiring their side after one or more of them has been taken out.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2015,7 +2023,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a master of secrets.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2036,7 +2044,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can bring your considerable knowledge to bear on any situation.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2057,7 +2065,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have an inquisitive mind and you’re a fast learner.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2078,7 +2086,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You pick up new languages easily. When you learn a new language, you learn to both speak and read it.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2097,7 +2105,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Make-it-yourself is your motto and you use manufacturing focuses to do just that. Use Dexterity (Craft) for most handcrafted and artistic items and Intelligence (Engineering) for most technological items. The GM may approve other manufacturing focuses as appropriate for certain items.</p>
-                                <p><strong>Requirements</strong> Any manufacturing focus (see above)</p>
+                                <p><strong>Requirements: </strong> Any manufacturing focus (see above)</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2118,7 +2126,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can treat certain conditions in the field.</p>
-                                <p><strong>Requirements</strong> Intelligence 1 or higher</p>
+                                <p><strong>Requirements: </strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2139,7 +2147,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can sow confusion among friends and foes alike.</p>
-                                <p><strong>Requirements</strong> Communication (Deception) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Deception) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2160,7 +2168,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have an eye for detail.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2181,7 +2189,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a skilled public speaker who can sway others with your words.</p>
-                                <p><strong>Requirements</strong> Communication (Persuasion) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2202,7 +2210,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>In hand-to-hand combat, you are relentless and overwhelming.</p>
-                                <p><strong>Requirements</strong> Fighting 2 or higher</p>
+                                <p><strong>Requirements: </strong> Fighting 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2223,7 +2231,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have a talent for the performing arts.</p>
-                                <p><strong>Requirements</strong> Communication (Performing) focus</p>
+                                <p><strong>Requirements: </strong> Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2244,7 +2252,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Any vehicle under your control becomes like an extension of yourself.</p>
-                                <p><strong>Requirements</strong> Dexterity (Driving or Piloting) focus</p>
+                                <p><strong>Requirements: </strong> Dexterity (Driving or Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2265,7 +2273,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>If you can see it, you can hit it. Hard.</p>
-                                <p><strong>Requirements</strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
+                                <p><strong>Requirements: </strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2286,7 +2294,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Between the quick and the dead, you prefer the former.</p>
-                                <p><strong>Requirements</strong> Accuracy (Pistols) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy (Pistols) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2307,7 +2315,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are the shield that protects your friends.</p>
-                                <p><strong>Requirements</strong> Perception and Willpower 1 or higher</p>
+                                <p><strong>Requirements: </strong> Perception and Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2328,7 +2336,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You react to threats instantly and instinctually.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2349,7 +2357,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>A rifle is far more dangerous in your hands.</p>
-                                <p><strong>Requirements</strong> Accuracy (Rifles) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2370,7 +2378,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are skilled in reconnaissance and infiltration.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2391,7 +2399,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained in martial arts focused on defense and deflection.</p>
-                                <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2412,7 +2420,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can fight more effectively wielding a single-handed melee weapon.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2433,7 +2441,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>By training or raw talent, your unarmed strikes leave a lasting impression.</p>
-                                <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
+                                <p><strong>Requirements: </strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2454,7 +2462,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You move calmly and expertly while in combat.</p>
-                                <p><strong>Requirements</strong> Dexterity and Perception 1 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity and Perception 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2473,7 +2481,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are adept with weapons thrown by hand.</p>
-                                <p><strong>Requirements</strong> None</p>
+                                <p><strong>Requirements: </strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2494,7 +2502,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are deadly with heavy melee weapons.</p>
-                                <p><strong>Requirements</strong> Strength 3 or higher and Fighting 1 or higher</p>
+                                <p><strong>Requirements: </strong> Strength 3 or higher and Fighting 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2532,7 +2540,7 @@
                                 <button type="action" name="act_select_spec_academic" class="white-text btn-invisible float-right">X</button>
                             </div>
                             <div class="justify">
-                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2569,7 +2577,7 @@
                             </div>
                             <div class="justify">
                                 <p>Few can fly like you do.</p>
-                                <p><strong>Requirements</strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
+                                <p><strong>Requirements: </strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2610,7 +2618,7 @@
                             </div>
                             <div class="justify">
                                 <p>You’re a skilled spy and infiltrator.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2781,7 +2789,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are trained to fight, and to win, no matter the odds.</p>
-                                <p><strong>Requirements</strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
+                                <p><strong>Requirements: </strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2818,7 +2826,7 @@
                             </div>
                             <div class="justify">
                                 <p>You claim authority and leadership in an organization.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2855,7 +2863,7 @@
                             </div>
                             <div class="justify">
                                 <p>No one shoots as quickly or as accurately as you.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 and Accuracy 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and Accuracy 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2909,7 +2917,7 @@
                             </div>
                             <div class="justify">
                                 <p>You excel at the use and abuse of computer systems.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2947,7 +2955,7 @@
                             </div>
                             <div class="justify">
                                 <p>You’re a skilled detective.</p>
-                                <p><strong>Requirements</strong> Perception and Intelligence 2 or higher and least one Perception focus</p>
+                                <p><strong>Requirements: </strong> Perception and Intelligence 2 or higher and least one Perception focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -2984,7 +2992,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a master of hand-to-hand combat.</p>
-                                <p><strong>Requirements</strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
+                                <p><strong>Requirements: </strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3021,7 +3029,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are a crack shot.</p>
-                                <p><strong>Requirements</strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3058,7 +3066,7 @@
                             </div>
                             <div class="justify">
                                 <p>You know people, and how to get what you want from them.</p>
-                                <p><strong>Requirements</strong> Communication and Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication and Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3095,7 +3103,7 @@
                             </div>
                             <div class="justify">
                                 <p>You can sway people with your performance, personal charisma, and fame.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Performing) focus</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3132,7 +3140,7 @@
                             </div>
                             <div class="justify">
                                 <p>You are adept at stealing things and avoiding getting caught.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3199,7 +3207,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained in finding information and putting it to use.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3221,7 +3229,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Few can fly like you do.</p>
-                                <p><strong>Requirements</strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
+                                <p><strong>Requirements: </strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3243,7 +3251,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re a skilled spy and infiltrator.</p>
-                                <p><strong>Requirements</strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
+                                <p><strong>Requirements: </strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3265,7 +3273,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained to fight, and to win, no matter the odds.</p>
-                                <p><strong>Requirements</strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
+                                <p><strong>Requirements: </strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3287,7 +3295,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You claim authority and leadership in an organization.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3309,7 +3317,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>No one shoots as quickly or as accurately as you.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 and Accuracy 2 or higher</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and Accuracy 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3331,7 +3339,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You excel at the use and abuse of computer systems.</p>
-                                <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
+                                <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3353,7 +3361,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re a skilled detective.</p>
-                                <p><strong>Requirements</strong> Perception and Intelligence 2 or higher and least one Perception focus.</p>
+                                <p><strong>Requirements: </strong> Perception and Intelligence 2 or higher and least one Perception focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3375,7 +3383,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a master of hand-to-hand combat.</p>
-                                <p><strong>Requirements</strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
+                                <p><strong>Requirements: </strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3397,7 +3405,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a crack shot.</p>
-                                <p><strong>Requirements</strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
+                                <p><strong>Requirements: </strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3419,7 +3427,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know people, and how to get what you want from them.</p>
-                                <p><strong>Requirements</strong> Communication and Perception 2 or higher</p>
+                                <p><strong>Requirements: </strong> Communication and Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3441,7 +3449,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can sway people with your performance, personal charisma, and fame.</p>
-                                <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Performing) focus</p>
+                                <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3463,7 +3471,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are adept at stealing things and avoiding getting caught.</p>
-                                <p><strong>Requirements</strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">

@@ -131,6 +131,30 @@ input[type=checkbox].sheet-styled-sibling-floated + span {
     margin-top: -3px;
 }
 
+input[type=checkbox].sheet-styled-toggle {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input[type=checkbox].sheet-styled-toggle:checked + span,
+input[type=checkbox].sheet-styled-toggle:hover + span {
+    color: orange;
+}
+
+input[type=checkbox].sheet-styled-toggle + span {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 /* Targetted styling that only effects elements contained within the stated class */
 .sheet-stats h3 {
 	display: inline-block;
@@ -161,6 +185,9 @@ input[type=checkbox].sheet-styled-sibling-floated + span {
 }
 
 .sheet-help-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
     color: gray;
     background-color: #eee;
 }
@@ -203,6 +230,22 @@ input[type=checkbox].sheet-styled-sibling-floated + span {
 
 .sheet-padding-bottom-20 {
     padding-bottom: 20px;
+}
+
+.sheet-padding-top-5 {
+    padding-top: 5px;
+}
+
+.sheet-padding-top-10 {
+    padding-top: 10px;
+}
+
+.sheet-padding-top-20 {
+    padding-top: 20px;
+}
+
+.sheet-padding-top-30 {
+    padding-top: 30px;
 }
 
 .sheet-padding-y-5 {
@@ -303,6 +346,12 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin: auto;
 }
 
+.sheet-dynamic-subsection-talents {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
 .sheet-focuses {
     background-color: #eee;
     overflow: auto;
@@ -378,4 +427,94 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 
 .sheet-lightgray-border {
     border: 1px solid lightgray;
+}
+
+.sheet-position-relative {
+    position: relative;
+}
+
+.sheet-position-absolute {
+    position: absolute;
+}
+
+.charsheet input[type=checkbox].sheet-styled-show-more {
+    z-index: 20;
+    opacity: 0;
+    width: 100%;
+    height: 40px;
+    top: 0;
+    left: 0;
+}
+
+.sheet-check-label {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.sheet-check-label::after {
+    padding-left: 5px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    content: "▾";
+}
+
+.charsheet input[type=checkbox].sheet-styled-show-more:checked ~.sheet-check-label::after {
+    content: "▴";
+}
+
+.sheet-position-relative {
+    position: relative;
+}
+.sheet-showmoreparent {
+  min-height: 30px;
+}
+
+.sheet-prof-button {
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.sheet-section-title-wrap {
+    text-align: center;
+}
+
+.sheet-section-wrapper h1 {
+    width: 100%;
+    color: #eee;
+}
+
+.sheet-section-wrapper h1::after {
+    padding-left: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    content: "▾";
+}
+
+input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
+    color: orange;
+}
+
+.charsheet input[type=checkbox].sheet-section-title-unhide:checked ~ h1::after {
+    content: "▴";
+}
+
+.sheet-section-wrapper input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    opacity: 0;
+}
+
+input[type=checkbox].sheet-section-title-unhide:not(:checked) ~ .sheet-hidden-if-unchecked,
+input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-checked {
+    display: none;
 }
