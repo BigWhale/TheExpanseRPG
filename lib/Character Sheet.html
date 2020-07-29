@@ -32,32 +32,32 @@
     <div class="col">
         <div class="2colrow">
             <div class="col">
-                <div class="black-bar margin-5">
+                <div class="black-bar black-bar-full margin-5">
                     <label class="white-text">Origin</label><input type="text" name="attr_origin" />
                 </div>
-                <div class="black-bar margin-5">
+                <div class="black-bar black-bar-full margin-5">
                     <label class="white-text">Social Class</label><input type="text" name="attr_social" />
                 </div>
             </div>
             <div class="col">
-                <div class="black-bar margin-5">
+                <div class="black-bar black-bar-full margin-5">
                     <label class="white-text">Background</label><input type="text" name="attr_background" />
                 </div>
-                <div class="black-bar margin-5">
+                <div class="black-bar black-bar-full margin-5">
                     <label class="white-text">Profession</label><input type="text" name="attr_profession" />
                 </div>
             </div>
         </div>
         <div class="section">
-            <div class="black-bar">
+            <div class="black-bar lightgray-border">
                 <label class="white-text">Talents</label>
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="blue-text padding-bottom-20">
                     Your character has areas of natural aptitude and special training called talents. They provide a way to customize your character that goes beyond their background.
                 </div>
-
-                <div class="focuses">
+                <!-- Selected Talents -->
+                <div class="focuses padding-bottom-20">
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
                         <input type="number" disabled="true" name="attr_income_mod_1" class="invisible" value="@{talent_affluent}*((@{talent_affluent_novice}*2)+@{talent_affluent_expert}+@{talent_affluent_master})" />
@@ -1649,8 +1649,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- Unselected talents -->
                 <div class="focuses hidden-if-unchecked">
-                    <label class="black-bar white-text improve-label">More Talents</label>
+                    <div class="unselected-items">Select talents</div>
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-checked dynamic-content">
@@ -2484,7 +2485,7 @@
             </div>
         </div>
         <div class="section">
-            <div class="black-bar">
+            <div class="black-bar lightgray-border">
                 <label class="white-text">Specializations</label>
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
