@@ -160,14 +160,25 @@ input[type=checkbox].sheet-styled-sibling-floated + span {
     transform: translate(5%, 25%);
 }
 
-.sheet-blue-text {
-    color: cornflowerblue;
-    font-style: italic;
+.sheet-help-text {
+    color: gray;
     background-color: #eee;
 }
 
 .sheet-margin-5 {
     margin: 5px;
+}
+
+.sheet-margin-top-5 {
+    margin-top: 5px;
+}
+
+.sheet-margin-top-10 {
+    margin-top: 10px;
+}
+
+.sheet-margin-top-20 {
+    margin-top: 20px;
 }
 
 .sheet-margin-bottom-5 {
@@ -192,6 +203,11 @@ input[type=checkbox].sheet-styled-sibling-floated + span {
 
 .sheet-padding-bottom-20 {
     padding-bottom: 20px;
+}
+
+.sheet-padding-y-5 {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
 
 .sheet-float-right {
@@ -326,6 +342,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 }
 
 .sheet-aliceblue-bg {
+    position: relative;
     background: aliceblue;
 }
 

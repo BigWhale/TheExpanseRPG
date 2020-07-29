@@ -1,18 +1,15 @@
-<div class="row textarea">
-    <label>Notes</label>
-    <textarea name="attr_notes"></textarea>
-</div>
-
-<div class="2colrow">
-    <div class="col justify">
-        <label>Name</label><input type="text" name="attr_character_name" />
-        <label>Level</label><input type="number" name="attr_level" value="1" />
-        <button type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
+<div class="2colrow margin-bottom-20">
+    <div class="col">
+        <div class="margin-bottom-10">
+            <label>Name</label><input type="text" name="attr_character_name" />
+            <label>Level</label><input type="number" name="attr_level" value="1" />
+        </div>
+        <button class="padding-y-5" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
             Roll for Initiative
         </button>
-		<button type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Simple Check|||0|||0|||?{Additional Modifiers|0}|||???'>
-			Simple Check
-		</button>
+        <button class="padding-y-5" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Simple Check|||0|||0|||?{Additional Modifiers|0}|||???'>
+            Simple Check
+        </button>
     </div>
     <div class="col black-bar">
         <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Income|||@{income_total}|||0|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
@@ -30,20 +27,20 @@
 
 <div class="2colrow">
     <div class="col">
-        <div class="2colrow">
+        <div class="2colrow margin-bottom-20">
             <div class="col">
-                <div class="black-bar black-bar-full margin-5">
+                <div class="black-bar black-bar-full">
                     <label class="white-text">Origin</label><input type="text" name="attr_origin" />
                 </div>
-                <div class="black-bar black-bar-full margin-5">
+                <div class="black-bar black-bar-full">
                     <label class="white-text">Social Class</label><input type="text" name="attr_social" />
                 </div>
             </div>
             <div class="col">
-                <div class="black-bar black-bar-full margin-5">
+                <div class="black-bar black-bar-full">
                     <label class="white-text">Background</label><input type="text" name="attr_background" />
                 </div>
-                <div class="black-bar black-bar-full margin-5">
+                <div class="black-bar black-bar-full">
                     <label class="white-text">Profession</label><input type="text" name="attr_profession" />
                 </div>
             </div>
@@ -53,7 +50,7 @@
                 <label class="white-text">Talents</label>
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text padding-bottom-20">
+                <div class="help-text padding-bottom-20">
                     Your character has areas of natural aptitude and special training called talents. They provide a way to customize your character that goes beyond their background.
                 </div>
                 <!-- Selected Talents -->
@@ -983,57 +980,81 @@
                         </div>
                     </div>
                     <div>
-                        <input type="checkbox" name="attr_talent_misdirection" class="unhide-content invisible" value="1" />
+                        <input type="checkbox" name="attr_talent_misdirection" class="unhide-content invisible"
+                               value="1"/>
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
                                 <label class="white-text">Misdirection</label>
-                                <button type="action" name="act_select_talent_misdirection" class="white-text btn-invisible float-right">X</button>
+                                <button type="action" name="act_select_talent_misdirection"
+                                        class="white-text btn-invisible float-right">X
+                                </button>
                             </div>
                             <div class="justify">
                                 <p>You can sow confusion among friends and foes alike.</p>
                                 <p><strong>Requirements</strong> Communication (Deception) focus</p>
-                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <input type="checkbox" class="unhide-content styled-sibling"/>
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> As a major action, you can make a Communication (Deception) test opposed by an opponent’s Willpower (Self-Discipline); if you succeed, your opponent cannot perform stunts until the end of your next turn.</p>
-                                    <p><strong>Expert</strong> Your targets become too focused on you to do anything else. When you use the Over Here! exploration stunt, the bonus your allies gain is +2 instead of +1, and you gain a +1 bonus yourself.</p>
-                                    <p><strong>Master</strong> When you use a Communication focus in combat and roll doubles, you gain +1 SP.</p>
+                                    <p><strong>Novice</strong> As a major action, you can make a Communication
+                                        (Deception) test opposed by an opponent’s Willpower (Self-Discipline); if you
+                                        succeed, your opponent cannot perform stunts until the end of your next turn.
+                                    </p>
+                                    <p><strong>Expert</strong> Your targets become too focused on you to do anything
+                                        else. When you use the Over Here! exploration stunt, the bonus your allies gain
+                                        is +2 instead of +1, and you gain a +1 bonus yourself.</p>
+                                    <p><strong>Master</strong> When you use a Communication focus in combat and roll
+                                        doubles, you gain +1 SP.</p>
                                 </div>
                             </div>
 
                             <div class="dynamic-subsection justify">
                                 <span>
-                                    <input type="checkbox" name="attr_talent_misdirection_novice" class="styled-sibling" value="1" checked/>
+                                    <input type="checkbox" name="attr_talent_misdirection_novice" class="styled-sibling"
+                                           value="1" checked/>
                                     <span>&plusmn; Novice</span>
                                 </span>
                                 &nbsp;
                                 <span>
-                                    <input type="checkbox" name="attr_talent_misdirection_expert" class="styled-sibling" value="1" />
+                                    <input type="checkbox" name="attr_talent_misdirection_expert" class="styled-sibling"
+                                           value="1"/>
                                     <span>&plusmn; Expert</span>
                                 </span>
                                 <div>
-                                    <input type="checkbox" name="attr_talent_misdirection_master" class="styled-sibling" value="1" />
+                                    <input type="checkbox" name="attr_talent_misdirection_master" class="styled-sibling"
+                                           value="1"/>
                                     <span>&plusmn; Master</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="attr_talent_observation" class="unhide-content invisible" value="1" />
+
+                        <input type="checkbox" name="attr_talent_observation" class="unhide-content invisible"
+                               value="1"/>
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
                                 <label class="white-text">Observation</label>
-                                <button type="action" name="act_select_talent_observation" class="white-text btn-invisible float-right">X</button>
+                                <button type="action" name="act_select_talent_observation"
+                                        class="white-text btn-invisible float-right">X
+                                </button>
                             </div>
                             <div class="justify">
                                 <p>You have an eye for detail.</p>
                                 <p><strong>Requirements</strong> Perception 2 or higher</p>
-                                <input type="checkbox" class="unhide-content styled-sibling" />
+                                <input type="checkbox" class="unhide-content styled-sibling"/>
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
-                                    <p><strong>Novice</strong> You notice things others do not. Choose a Perception focus. If you fail a Perception test with your chosen focus, you can re-roll it but must keep the result of the second roll.</p>
-                                    <p><strong>Expert</strong> Analysis of your observation often leads to insight. On a successful Perception test, you can spend 2 SP to make a second, immediate Perception test with the same TN but with a different focus than the first, and gain additional information (if any) from a successful test with the second focus. This includes additional information when you uncover the clue within a lead.</p>
-                                    <p><strong>Master</strong> Nothing escapes your scrutiny. On a successful Perception test, you can spend 2 SP and gain a +2 bonus to all Perception tests involving the same object or subject as the first test for the duration of the encounter.</p>
+                                    <p><strong>Novice</strong> You notice things others do not. Choose a Perception
+                                        focus. If you fail a Perception test with your chosen focus, you can re-roll it
+                                        but must keep the result of the second roll.</p>
+                                    <p><strong>Expert</strong> Analysis of your observation often leads to insight. On a
+                                        successful Perception test, you can spend 2 SP to make a second, immediate
+                                        Perception test with the same TN but with a different focus than the first, and
+                                        gain additional information (if any) from a successful test with the second
+                                        focus. This includes additional information when you uncover the clue within a
+                                        lead.</p>
+                                    <p><strong>Master</strong> Nothing escapes your scrutiny. On a successful Perception
+                                        test, you can spend 2 SP and gain a +2 bonus to all Perception tests involving
+                                        the same object or subject as the first test for the duration of the encounter.
+                                    </p>
                                 </div>
                                 <p>Chosen Focus:</p>
                                 <select name="attr_talent_observation_focus" style="width: 100%;">
@@ -1053,16 +1074,19 @@
 
                             <div class="dynamic-subsection justify">
                                 <span>
-                                    <input type="checkbox" name="attr_talent_observation_novice" class="styled-sibling" value="1" checked/>
+                                    <input type="checkbox" name="attr_talent_observation_novice" class="styled-sibling"
+                                           value="1" checked/>
                                     <span>&plusmn; Novice</span>
                                 </span>
                                 &nbsp;
                                 <span>
-                                    <input type="checkbox" name="attr_talent_observation_expert" class="styled-sibling" value="1" />
+                                    <input type="checkbox" name="attr_talent_observation_expert" class="styled-sibling"
+                                           value="1"/>
                                     <span>&plusmn; Expert</span>
                                 </span>
                                 <div>
-                                    <input type="checkbox" name="attr_talent_observation_master" class="styled-sibling" value="1" />
+                                    <input type="checkbox" name="attr_talent_observation_master" class="styled-sibling"
+                                           value="1"/>
                                     <span>&plusmn; Master</span>
                                 </div>
                             </div>
@@ -1658,7 +1682,7 @@
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_affluent" class="white-text btn-invisible">Affluent</button>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have access to greater resources than most.</p>
                                 <p><strong>Requirements</strong> None.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1679,7 +1703,7 @@
                                 <button type="action" name="act_select_talent_agility" class="hidden-if-unchecked white-text btn-invisible">Agility</button>
                                 <label class="hidden-if-checked white-text">Agility</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You move with grace, speed, and ease.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1700,7 +1724,7 @@
                                 <button type="action" name="act_select_talent_artistry" class="hidden-if-unchecked white-text btn-invisible">Artistry</button>
                                 <label class="hidden-if-checked white-text">Artistry</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can create fine works of art. For the performing arts, see the Performance talent.</p>
                                 <p><strong>Requirements</strong> Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1719,7 +1743,7 @@
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_attractive" class="white-text btn-invisible">Attractive</button>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have that special something that catches and holds people’s attention and interest.</p>
                                 <p><strong>Requirements</strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1740,7 +1764,7 @@
                                 <button type="action" name="act_select_talent_burglary" class="hidden-if-unchecked white-text btn-invisible">Burglary</button>
                                 <label class="hidden-if-checked white-text">Burglary</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know how to bypass security to enter a place and take anything that strikes your fancy</p>
                                 <p><strong>Requirements</strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1761,7 +1785,7 @@
                                 <button type="action" name="act_select_talent_carousing" class="hidden-if-unchecked white-text btn-invisible">Carousing</button>
                                 <label class="hidden-if-checked white-text">Carousing</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You take your fun seriously, and use it to good effect.</p>
                                 <p><strong>Requirements</strong> Communication and Constitution 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1782,7 +1806,7 @@
                                 <button type="action" name="act_select_talent_command" class="hidden-if-unchecked white-text btn-invisible">Command</button>
                                 <label class="hidden-if-checked white-text">Command</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a skilled and capable leader.</p>
                                 <p><strong>Requirements</strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1802,7 +1826,7 @@
                                 <button type="action" name="act_select_talent_contacts" class="hidden-if-unchecked white-text btn-invisible">Contacts</button>
                                 <label class="hidden-if-checked white-text">Contacts</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know people, sometimes in the unlikeliest places.</p>
                                 <p><strong>Requirements</strong> Communication 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1823,7 +1847,7 @@
                                 <button type="action" name="act_select_talent_doctor" class="hidden-if-unchecked white-text btn-invisible">Doctor</button>
                                 <label class="hidden-if-checked white-text">Doctor</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have the skills to heal wounds and treat illness and other conditions.</p>
                                 <p><strong>Requirements</strong> Intelligence (Medicine) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1844,7 +1868,7 @@
                                 <button type="action" name="act_select_talent_dual_weapon" class="hidden-if-unchecked white-text btn-invisible">Dual Weapon</button>
                                 <label class="hidden-if-checked white-text">Dual Weapon</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can fight in hand-to-hand combat with a weapon in your primary hand and another in your off-hand (a secondary weapon). Unless otherwise stated, attacks come from the primary weapon.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1863,7 +1887,7 @@
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_expertise" class="white-text btn-invisible">Expertise</button>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a specialist in your field.</p>
                                 <p><strong>Requirements</strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1884,7 +1908,7 @@
                                 <button type="action" name="act_select_talent_fringer" class="hidden-if-unchecked white-text btn-invisible">Fringer</button>
                                 <label class="hidden-if-checked white-text">Fringer</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know how to navigate and survive on the fringes of civilization.</p>
                                 <p><strong>Requirements</strong> Communication 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1905,7 +1929,7 @@
                                 <button type="action" name="act_select_talent_grappling" class="hidden-if-unchecked white-text btn-invisible">Grappling</button>
                                 <label class="hidden-if-checked white-text">Grappling</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re skilled in restraining and subduing opponents in unarmed combat.</p>
                                 <p><strong>Requirements</strong> Fighting (Grappling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1926,7 +1950,7 @@
                                 <button type="action" name="act_select_talent_hacking" class="hidden-if-unchecked white-text btn-invisible">Hacking</button>
                                 <label class="hidden-if-checked white-text">Hacking</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Computer security systems and safeguards are more suggestions to you than anything else.</p>
                                 <p><strong>Requirements</strong> Intelligence (Security) and Intelligence (Technology) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1947,7 +1971,7 @@
                                 <button type="action" name="act_select_talent_improvisation" class="hidden-if-unchecked white-text btn-invisible">Improvisation</button>
                                 <label class="hidden-if-checked white-text">Improvisation</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Whatever the situation is, you’re sure you can handle it.</p>
                                 <p><strong>Requirements</strong> Intelligence 1 or Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1968,7 +1992,7 @@
                                 <button type="action" name="act_select_talent_inspire" class="hidden-if-unchecked white-text btn-invisible">Inspire</button>
                                 <label class="hidden-if-checked white-text">Inspire</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Your words and presence motivate others to action. The benefits of Inspire do not stack, if you happen to have multiple characters on the same side who have it, other than their ability to continue inspiring their side after one or more of them has been taken out.</p>
                                 <p><strong>Requirements</strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -1989,7 +2013,7 @@
                                 <button type="action" name="act_select_talent_intrigue" class="hidden-if-unchecked white-text btn-invisible">Intrigue</button>
                                 <label class="hidden-if-checked white-text">Intrigue</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a master of secrets.</p>
                                 <p><strong>Requirements</strong> Communication 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2010,7 +2034,7 @@
                                 <button type="action" name="act_select_talent_knowitall" class="hidden-if-unchecked white-text btn-invisible">Know-it-All</button>
                                 <label class="hidden-if-checked white-text">Know-it-All</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can bring your considerable knowledge to bear on any situation.</p>
                                 <p><strong>Requirements</strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2031,7 +2055,7 @@
                                 <button type="action" name="act_select_talent_knowledge" class="hidden-if-unchecked white-text btn-invisible">Knowledge</button>
                                 <label class="hidden-if-checked white-text">Knowledge</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have an inquisitive mind and you’re a fast learner.</p>
                                 <p><strong>Requirements</strong> Intelligence 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2052,7 +2076,7 @@
                                 <button type="action" name="act_select_talent_linguistics" class="hidden-if-unchecked white-text btn-invisible">Linguistics</button>
                                 <label class="hidden-if-checked white-text">Linguistics</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You pick up new languages easily. When you learn a new language, you learn to both speak and read it.</p>
                                 <p><strong>Requirements</strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2071,7 +2095,7 @@
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_maker" class="hidden-if-unchecked white-text btn-invisible">Maker</button>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Make-it-yourself is your motto and you use manufacturing focuses to do just that. Use Dexterity (Craft) for most handcrafted and artistic items and Intelligence (Engineering) for most technological items. The GM may approve other manufacturing focuses as appropriate for certain items.</p>
                                 <p><strong>Requirements</strong> Any manufacturing focus (see above)</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2092,7 +2116,7 @@
                                 <button type="action" name="act_select_talent_medic" class="hidden-if-unchecked white-text btn-invisible">Medic</button>
                                 <label class="hidden-if-checked white-text">Medic</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can treat certain conditions in the field.</p>
                                 <p><strong>Requirements</strong> Intelligence 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2113,7 +2137,7 @@
                                 <button type="action" name="act_select_talent_misdirection" class="hidden-if-unchecked white-text btn-invisible">Misdirection</button>
                                 <label class="hidden-if-checked white-text">Misdirection</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can sow confusion among friends and foes alike.</p>
                                 <p><strong>Requirements</strong> Communication (Deception) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2134,7 +2158,7 @@
                                 <button type="action" name="act_select_talent_observation" class="hidden-if-unchecked white-text btn-invisible">Observation</button>
                                 <label class="hidden-if-checked white-text">Observation</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have an eye for detail.</p>
                                 <p><strong>Requirements</strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2155,7 +2179,7 @@
                                 <button type="action" name="act_select_talent_oratory" class="hidden-if-unchecked white-text btn-invisible">Oratory</button>
                                 <label class="hidden-if-checked white-text">Oratory</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a skilled public speaker who can sway others with your words.</p>
                                 <p><strong>Requirements</strong> Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2176,7 +2200,7 @@
                                 <button type="action" name="act_select_talent_overwhelm" class="hidden-if-unchecked white-text btn-invisible">Overwhelm</button>
                                 <label class="hidden-if-checked white-text">Overwhelm</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>In hand-to-hand combat, you are relentless and overwhelming.</p>
                                 <p><strong>Requirements</strong> Fighting 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2197,7 +2221,7 @@
                                 <button type="action" name="act_select_talent_performance" class="hidden-if-unchecked white-text btn-invisible">Performance</button>
                                 <label class="hidden-if-checked white-text">Performance</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You have a talent for the performing arts.</p>
                                 <p><strong>Requirements</strong> Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2218,7 +2242,7 @@
                                 <button type="action" name="act_select_talent_pilot" class="hidden-if-unchecked white-text btn-invisible">Pilot</button>
                                 <label class="hidden-if-checked white-text">Pilot</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Any vehicle under your control becomes like an extension of yourself.</p>
                                 <p><strong>Requirements</strong> Dexterity (Driving or Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2239,7 +2263,7 @@
                                 <button type="action" name="act_select_talent_pinpoint" class="hidden-if-unchecked white-text btn-invisible">Pinpoint</button>
                                 <label class="hidden-if-checked white-text">Pinpoint</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>If you can see it, you can hit it. Hard.</p>
                                 <p><strong>Requirements</strong> Accuracy or Fighting 1 or higher, and Dexterity 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2260,7 +2284,7 @@
                                 <button type="action" name="act_select_talent_pistol" class="hidden-if-unchecked white-text btn-invisible">Pistol</button>
                                 <label class="hidden-if-checked white-text">Pistol</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Between the quick and the dead, you prefer the former.</p>
                                 <p><strong>Requirements</strong> Accuracy (Pistols) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2281,7 +2305,7 @@
                                 <button type="action" name="act_select_talent_protector" class="hidden-if-unchecked white-text btn-invisible">Protector</button>
                                 <label class="hidden-if-checked white-text">Protector</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are the shield that protects your friends.</p>
                                 <p><strong>Requirements</strong> Perception and Willpower 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2302,7 +2326,7 @@
                                 <button type="action" name="act_select_talent_quick_reflexes" class="hidden-if-unchecked white-text btn-invisible">Quick Reflexes</button>
                                 <label class="hidden-if-checked white-text">Quick Reflexes</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You react to threats instantly and instinctually.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2323,7 +2347,7 @@
                                 <button type="action" name="act_select_talent_rifle" class="hidden-if-unchecked white-text btn-invisible">Rifle</button>
                                 <label class="hidden-if-checked white-text">Rifle</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>A rifle is far more dangerous in your hands.</p>
                                 <p><strong>Requirements</strong> Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2344,7 +2368,7 @@
                                 <button type="action" name="act_select_talent_scouting" class="hidden-if-unchecked white-text btn-invisible">Scouting</button>
                                 <label class="hidden-if-checked white-text">Scouting</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are skilled in reconnaissance and infiltration.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2365,7 +2389,7 @@
                                 <button type="action" name="act_select_talent_self_defense" class="hidden-if-unchecked white-text btn-invisible">Self Defense</button>
                                 <label class="hidden-if-checked white-text">Self Defense</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained in martial arts focused on defense and deflection.</p>
                                 <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2386,7 +2410,7 @@
                                 <button type="action" name="act_select_talent_single_weapon" class="hidden-if-unchecked white-text btn-invisible">Single Weapon</button>
                                 <label class="hidden-if-checked white-text">Single Weapon</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can fight more effectively wielding a single-handed melee weapon.</p>
                                 <p><strong>Requirements</strong> Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2407,7 +2431,7 @@
                                 <button type="action" name="act_select_talent_striking" class="hidden-if-unchecked white-text btn-invisible">Striking</button>
                                 <label class="hidden-if-checked white-text">Striking</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>By training or raw talent, your unarmed strikes leave a lasting impression.</p>
                                 <p><strong>Requirements</strong> Fighting (Brawling) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2428,7 +2452,7 @@
                                 <button type="action" name="act_select_talent_tactical" class="hidden-if-unchecked white-text btn-invisible">Tactical Awareness</button>
                                 <label class="hidden-if-checked white-text">Tactical Awareness</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You move calmly and expertly while in combat.</p>
                                 <p><strong>Requirements</strong> Dexterity and Perception 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2447,7 +2471,7 @@
                             <div class="black-bar">
                                 <button type="action" name="act_select_talent_thrown" class="white-text btn-invisible">Thrown Weapon</button>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are adept with weapons thrown by hand.</p>
                                 <p><strong>Requirements</strong> None</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2468,7 +2492,7 @@
                                 <button type="action" name="act_select_talent_two_handed" class="hidden-if-unchecked white-text btn-invisible">Two-Handed</button>
                                 <label class="hidden-if-checked white-text">Two-Handed</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are deadly with heavy melee weapons.</p>
                                 <p><strong>Requirements</strong> Strength 3 or higher and Fighting 1 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -2489,13 +2513,13 @@
                 <label class="white-text">Specializations</label>
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     Specializations help you to realize your character’s full potential.
                 </div>
-                <div class="blue-text hidden-if-unchecked">
+                <div class="help-text hidden-if-unchecked">
                     Each specialization has a theme on which you can build your character concept. Your character might work for a government agency or corporation, for example, but that could mean being a computer expert, or a researcher, or a master of unarmed combat, among other things. Every specialization has its own unique talent. When you take a second specialization, think about how the two might work together, and what the combination says about your character.
                 </div>
-                <div class="blue-text">
+                <div class="help-text">
                     <strong>Must be Level 4 or higher. Max 2.</strong>
                 </div>
 
@@ -2685,7 +2709,7 @@
                                                             Disguise
                                                         </button>
                                                     </div>
-                                                    <div class="focus blue-text">
+                                                    <div class="focus help-text">
                                                         Changing your appearance to look like someone else.
                                                     </div>
                                                 </div>
@@ -2698,7 +2722,7 @@
                                                             Invest.
                                                         </button>
                                                     </div>
-                                                    <div class="focus blue-text">
+                                                    <div class="focus help-text">
                                                         Interviewing people for information and finding and deciphering clues.
                                                     </div>
                                                 </div>
@@ -2711,7 +2735,7 @@
                                                             Stealth
                                                         </button>
                                                     </div>
-                                                    <div class="focus blue-text">
+                                                    <div class="focus help-text">
                                                         Moving around without being noticed.
                                                     </div>
                                                 </div>
@@ -2724,7 +2748,7 @@
                                                             Crypto.
                                                         </button>
                                                     </div>
-                                                    <div class="focus blue-text">
+                                                    <div class="focus help-text">
                                                         Creating and deciphering codes and ciphers.
                                                     </div>
                                                 </div>
@@ -2737,7 +2761,7 @@
                                                             Security
                                                         </button>
                                                     </div>
-                                                    <div class="focus blue-text">
+                                                    <div class="focus help-text">
                                                         Knowledge of different security devices, systems, protocols, and personnel.
                                                     </div>
                                                 </div>
@@ -3173,7 +3197,7 @@
                                 <button type="action" name="act_select_spec_academic" class="hidden-if-unchecked white-text btn-invisible">Academic</button>
                                 <label class="hidden-if-checked white-text">Academic</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained in finding information and putting it to use.</p>
                                 <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3195,7 +3219,7 @@
                                 <button type="action" name="act_select_spec_ace" class="hidden-if-unchecked white-text btn-invisible">Ace</button>
                                 <label class="hidden-if-checked white-text">Ace</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>Few can fly like you do.</p>
                                 <p><strong>Requirements</strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3217,7 +3241,7 @@
                                 <button type="action" name="act_select_spec_agent" class="hidden-if-unchecked white-text btn-invisible">Agent</button>
                                 <label class="hidden-if-checked white-text">Agent</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re a skilled spy and infiltrator.</p>
                                 <p><strong>Requirements</strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3239,7 +3263,7 @@
                                 <button type="action" name="act_select_spec_commando" class="hidden-if-unchecked white-text btn-invisible">Commando</button>
                                 <label class="hidden-if-checked white-text">Commando</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are trained to fight, and to win, no matter the odds.</p>
                                 <p><strong>Requirements</strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3261,7 +3285,7 @@
                                 <button type="action" name="act_select_spec_executive" class="hidden-if-unchecked white-text btn-invisible">Executive</button>
                                 <label class="hidden-if-checked white-text">Executive</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You claim authority and leadership in an organization.</p>
                                 <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3283,7 +3307,7 @@
                                 <button type="action" name="act_select_spec_gunfighter" class="hidden-if-unchecked white-text btn-invisible">Gunfighter</button>
                                 <label class="hidden-if-checked white-text">Gunfighter</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>No one shoots as quickly or as accurately as you.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 and Accuracy 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3305,7 +3329,7 @@
                                 <button type="action" name="act_select_spec_hacker" class="hidden-if-unchecked white-text btn-invisible">Hacker</button>
                                 <label class="hidden-if-checked white-text">Hacker</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You excel at the use and abuse of computer systems.</p>
                                 <p><strong>Requirements</strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3327,7 +3351,7 @@
                                 <button type="action" name="act_select_spec_investigator" class="hidden-if-unchecked white-text btn-invisible">Investigator</button>
                                 <label class="hidden-if-checked white-text">Investigator</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You’re a skilled detective.</p>
                                 <p><strong>Requirements</strong> Perception and Intelligence 2 or higher and least one Perception focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3349,7 +3373,7 @@
                                 <button type="action" name="act_select_spec_martial_artist" class="hidden-if-unchecked white-text btn-invisible">Martial Artist</button>
                                 <label class="hidden-if-checked white-text">Martial Artist</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a master of hand-to-hand combat.</p>
                                 <p><strong>Requirements</strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3371,7 +3395,7 @@
                                 <button type="action" name="act_select_spec_sniper" class="hidden-if-unchecked white-text btn-invisible">Sniper</button>
                                 <label class="hidden-if-checked white-text">Sniper</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are a crack shot.</p>
                                 <p><strong>Requirements</strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3393,7 +3417,7 @@
                                 <button type="action" name="act_select_spec_socialite" class="hidden-if-unchecked white-text btn-invisible">Socialite</button>
                                 <label class="hidden-if-checked white-text">Socialite</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You know people, and how to get what you want from them.</p>
                                 <p><strong>Requirements</strong> Communication and Perception 2 or higher</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3415,7 +3439,7 @@
                                 <button type="action" name="act_select_spec_star" class="hidden-if-unchecked white-text btn-invisible">Star</button>
                                 <label class="hidden-if-checked white-text">Star</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You can sway people with your performance, personal charisma, and fame.</p>
                                 <p><strong>Requirements</strong> Communication 2 or higher and the Communication (Performing) focus</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3437,7 +3461,7 @@
                                 <button type="action" name="act_select_spec_thief" class="hidden-if-unchecked white-text btn-invisible">Thief</button>
                                 <label class="hidden-if-checked white-text">Thief</label>
                             </div>
-                            <div class="tiny-text blue-text aliceblue-bg justify">
+                            <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You are adept at stealing things and avoiding getting caught.</p>
                                 <p><strong>Requirements</strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
@@ -3458,7 +3482,7 @@
             <div class="black-bar">
                 <label class="white-text">Drive</label>
             </div>
-            <div class="blue-text">
+            <div class="help-text">
                 Your character’s drive describes what motivates them to act, to say “yes” to an opportunity. Just like an Epstein on a ship, drive is what moves your character forward. Drive gives you cues for action as a player and provides the GM with “hooks” to encourage your character to take action.
             </div>
             <div class="textarea">
@@ -3469,7 +3493,7 @@
             <div class="black-bar">
                 <label class="white-text">Relationships</label>
             </div>
-            <div class="blue-text">
+            <div class="help-text">
                 Once per game session you can get as many SP as your Relationship rating to perform any stunt that would be in-character when it comes to interacting with that character. You choose this after you see if you succeed on a test.
             </div>
             <div class="relationships">
@@ -3482,7 +3506,7 @@
             <div class="black-bar">
                 <label class="white-text">Attacks</label>
             </div>
-            <div class="blue-text">
+            <div class="help-text">
                 Attacks allow you to do damage to opponents.
             </div>
             <fieldset class="repeating_weapons">
@@ -3681,7 +3705,7 @@
                 <input type="number" name='attr_accuracy' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability measures aim and precision, and measures your capacity to hit with ranged or thrown weapons.
                 </div>
 
@@ -3809,7 +3833,7 @@
                                     Bows
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with string-fired weapons, from a hand-drawn compound bow to a mechanical crossbow.
                             </div>
                         </div>
@@ -3822,7 +3846,7 @@
                                     Gunnery
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with precision heavy ranged weapons, including ship-mounted weapons.
                             </div>
                         </div>
@@ -3835,7 +3859,7 @@
                                     Pistols
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with single-grip, short-barrel ballistic weapons.
                             </div>
                         </div>
@@ -3848,7 +3872,7 @@
                                     Rifles
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with double-grip, long-barrel ballistic weapons.
                             </div>
                         </div>
@@ -3861,7 +3885,7 @@
                                     Throwing
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with thrown weapons, including grenades.
                             </div>
                         </div>
@@ -3877,7 +3901,7 @@
                 <input type="number" name='attr_communication' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability covers your social skills and generally making friends and influencing people.
                 </div>
 
@@ -4136,7 +4160,7 @@
                                     Bargaining
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Negotiating with others and making deals.
                             </div>
                         </div>
@@ -4149,7 +4173,7 @@
                                     Deception
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Tricking and lying to other people.
                             </div>
                         </div>
@@ -4162,7 +4186,7 @@
                                     Disguise
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Changing your appearance to look like someone else.
                             </div>
                         </div>
@@ -4175,7 +4199,7 @@
                                     Etiquette
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowing the social niceties of various cultures.
                             </div>
                         </div>
@@ -4188,7 +4212,7 @@
                                     Expression
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Conveying thoughts and ideas effectively through words.
                             </div>
                         </div>
@@ -4201,7 +4225,7 @@
                                     Gambling
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Playing games of chance and profiting from them.
                             </div>
                         </div>
@@ -4214,7 +4238,7 @@
                                     Investigation
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Interviewing people for information and finding and deciphering clues.
                             </div>
                         </div>
@@ -4227,7 +4251,7 @@
                                     Leadership
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Guiding, directing, and inspiring others.
                             </div>
                         </div>
@@ -4240,7 +4264,7 @@
                                     Performing
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Entertaining an audience with a type of performance art.
                             </div>
                         </div>
@@ -4253,7 +4277,7 @@
                                     Persuasion
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Convincing others to agree with you.
                             </div>
                         </div>
@@ -4266,7 +4290,7 @@
                                     Seduction
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Getting attention through romantic and sexual allure.
                             </div>
                         </div>
@@ -4282,7 +4306,7 @@
                 <input type="number" name='attr_constitution' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability is your overall health, fortitude, and resistance to harm, illness, and fatigue.
                 </div>
 
@@ -4387,7 +4411,7 @@
                                     Running
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Moving quickly in both short sprints and long-distance hauls.
                             </div>
                         </div>
@@ -4400,7 +4424,7 @@
                                     Swimming
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Moving across water and staying afloat.
                             </div>
                         </div>
@@ -4413,7 +4437,7 @@
                                     Stamina
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Enduring disease, fatigue, and privation
                             </div>
                         </div>
@@ -4426,7 +4450,7 @@
                                     Tolerance
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Withstanding the effects of potentially toxic substances, imbibed for recreation or unwitting exposure.
                             </div>
                         </div>
@@ -4442,7 +4466,7 @@
                 <input type="number" name='attr_dexterity' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.
                 </div>
 
@@ -4635,7 +4659,7 @@
                                     Acrobatics
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Executing gymnastic, balancing, and tumbling maneuvers.
                             </div>
                         </div>
@@ -4648,7 +4672,7 @@
                                     Crafting
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.
                             </div>
                         </div>
@@ -4661,7 +4685,7 @@
                                     Driving
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Handling surface vehicles like cars, trucks, or motorized carts, to name a few.
                             </div>
                         </div>
@@ -4674,7 +4698,7 @@
                                     Free-Fall
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Maneuvering and moving while in free-fall, usually in microgravity.
                             </div>
                         </div>
@@ -4687,7 +4711,7 @@
                                     Initiative
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Reacting quickly under pressure.
                             </div>
                         </div>
@@ -4700,7 +4724,7 @@
                                     Piloting
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.
                             </div>
                         </div>
@@ -4713,7 +4737,7 @@
                                     Sleight of Hand
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Using sleight of hand and deft movements to trick others, hide things, or pick pockets.
                             </div>
                         </div>
@@ -4726,7 +4750,7 @@
                                     Stealth
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Moving around without being noticed.
                             </div>
                         </div>
@@ -4742,7 +4766,7 @@
                 <input type="number" name='attr_fighting' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability is your capability in close combat, ranging from a brawl to wielding weapons.
                 </div>
 
@@ -4847,7 +4871,7 @@
                                     Brawling
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.
                             </div>
                         </div>
@@ -4860,7 +4884,7 @@
                                     Grappling
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency in unarmed techniques intended to immobilize and restrain.
                             </div>
                         </div>
@@ -4873,7 +4897,7 @@
                                     Heavy Weapons
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.
                             </div>
                         </div>
@@ -4886,7 +4910,7 @@
                                     Light Weapons
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.
                             </div>
                         </div>
@@ -4902,7 +4926,7 @@
                 <input type="number" name='attr_intelligence' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability measures your reasoning, memory, problem-solving, and overall knowledge.
                 </div>
 
@@ -5249,7 +5273,7 @@
                                     Art
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of artistic movements, styles, artists, and works in any of the fine arts. Making art uses the Crafting focus.
                             </div>
                         </div>
@@ -5262,7 +5286,7 @@
                                     Business
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of running a business as well as of the business and corporate world.
                             </div>
                         </div>
@@ -5275,7 +5299,7 @@
                                     Cryptography
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Creating and deciphering codes and ciphers.
                             </div>
                         </div>
@@ -5288,7 +5312,7 @@
                                     Current Affairs
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of politics, newsworthy events, and popular culture.
                             </div>
                         </div>
@@ -5301,7 +5325,7 @@
                                     Demolitions
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Identifying, using, and safely handling explosives, as well as understanding their effects and detonation methods.
                             </div>
                         </div>
@@ -5314,7 +5338,7 @@
                                     Engineering
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Making, repairing, and maintaining technological items as well as knowledge of the principles and practicalities of their design and development.
                             </div>
                         </div>
@@ -5327,7 +5351,7 @@
                                     Evaluation
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of the value of goods, works of art, and other valuables.
                             </div>
                         </div>
@@ -5340,7 +5364,7 @@
                                     Law
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of codes, regulations, and different legal proceedings of all levels of the judiciary and law enforcement.
                             </div>
                         </div>
@@ -5353,7 +5377,7 @@
                                     Medicine
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Tending to the sick and injured, and understanding medical and anatomical knowledge.
                             </div>
                         </div>
@@ -5366,7 +5390,7 @@
                                     Navigation
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Planning and following a route from one place to another, interpreting maps and cartographic data, and figuring out where you are.
                             </div>
                         </div>
@@ -5379,7 +5403,7 @@
                                     Research
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Conducting a systematic search for information, usually using records, archives, and books.
                             </div>
                         </div>
@@ -5392,7 +5416,7 @@
                                     Science
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of an organized field of study and the ability to understand things related to it. Examples of Science focuses include Anthropology, Astronomy, Botany, Biology, Chemistry, Economics, Genetics, History, Planetary or “Earth” Sciences, Physics, Psychology, and Theology, but you can choose another scientific field, if you wish.
                             </div>
                         </div>
@@ -5405,7 +5429,7 @@
                                     Security
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of different security devices, systems, protocols, and personnel.
                             </div>
                         </div>
@@ -5418,7 +5442,7 @@
                                     Tactics
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of strategy, tactics, and famous applications thereof.
                             </div>
                         </div>
@@ -5431,7 +5455,7 @@
                                     Technology
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Knowledge of the design and operation of technology, particularly computers, which are incorporated into nearly all technological items in The Expanse.
                             </div>
                         </div>
@@ -5447,7 +5471,7 @@
                 <input type="number" name='attr_perception' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability is your capacity to pick up on and notice things using any of his senses.
                 </div>
 
@@ -5684,7 +5708,7 @@
                                     Empathy
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Picking up on and interpreting the feelings and emotions of others.
                             </div>
                         </div>
@@ -5697,7 +5721,7 @@
                                     Hearing
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Perceiving using your auditory sense.
                             </div>
                         </div>
@@ -5710,7 +5734,7 @@
                                     Intuition
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Having a "gut feeling" about certain things you can’t otherwise sense.
                             </div>
                         </div>
@@ -5723,7 +5747,7 @@
                                     Searching
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Finding things that are hidden or obscured, such as hidden compartments.
                             </div>
                         </div>
@@ -5736,7 +5760,7 @@
                                     Seeing
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Perceiving using your visual sense.
                             </div>
                         </div>
@@ -5749,7 +5773,7 @@
                                     Smelling
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Perceiving using your olfactory sense.
                             </div>
                         </div>
@@ -5762,7 +5786,7 @@
                                     Survival
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Practical skills of wilderness survival.
                             </div>
                         </div>
@@ -5775,7 +5799,7 @@
                                     Tasting
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Perceiving using your gustatory sense.
                             </div>
                         </div>
@@ -5788,7 +5812,7 @@
                                     Touching
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Perceiving using your tactile sense.
                             </div>
                         </div>
@@ -5801,7 +5825,7 @@
                                     Tracking
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Following tracks and other signs of passage.
                             </div>
                         </div>
@@ -5817,7 +5841,7 @@
                 <input type="number" name='attr_strength' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability rates your sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.
                 </div>
 
@@ -5922,7 +5946,7 @@
                                     Climbing
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Scaling walls and other vertical obstacles.
                             </div>
                         </div>
@@ -5935,7 +5959,7 @@
                                     Intimidation
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Overawing others with your physical presence and threats.
                             </div>
                         </div>
@@ -5948,7 +5972,7 @@
                                     Jumping
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Making standing or running jumps.
                             </div>
                         </div>
@@ -5961,7 +5985,7 @@
                                     Might
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Feats of raw power, such as lifting or holding up heavy objects.
                             </div>
                         </div>
@@ -5977,7 +6001,7 @@
                 <input type="number" name='attr_willpower' class='short float-right' value="0">
                 <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
                 <span class="white-text float-right">&plusmn;</span>
-                <div class="blue-text">
+                <div class="help-text">
                     This ability measures your self-control, self-discipline, mental fortitude, and confidence.
                 </div>
 
@@ -6060,7 +6084,7 @@
                                     Courage
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Overcoming fear in the face of adversity.
                             </div>
                         </div>
@@ -6073,7 +6097,7 @@
                                     Faith
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Deriving inner strength through spiritual or moral belief.
                             </div>
                         </div>
@@ -6086,7 +6110,7 @@
                                     Self-Discipline
                                 </button>
                             </div>
-                            <div class="focus blue-text">
+                            <div class="focus help-text">
                                 Focusing your mental energy or controlling your impulses and emotions.
                             </div>
                         </div>
@@ -6169,6 +6193,11 @@
 	<!--<div class="col">-->
 	<!--	<img src="https://vignette.wikia.nocookie.net/expanse/images/4/41/The_Expanse_TV.png/revision/latest/scale-to-width-down/1000?cb=20150115210631" />-->
 	<!--</div>-->
+</div>
+
+<div class="row textarea margin-top-20">
+    <label>Notes</label>
+    <textarea name="attr_notes"></textarea>
 </div>
 
 <script type="text/worker">
