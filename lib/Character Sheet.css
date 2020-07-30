@@ -220,6 +220,11 @@ input[type=checkbox].sheet-styled-toggle + span {
     margin-bottom: 20px;
 }
 
+
+.sheet-padding-5 {
+    padding:5px;
+}
+
 .sheet-padding-bottom-5 {
     padding-bottom: 5px;
 }
@@ -485,14 +490,22 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 
 .sheet-section-wrapper h1 {
     width: 100%;
-    color: #eee;
+    line-height: 1.4;
+    background: #000;
+    color: #fff;
 }
 
-.sheet-section-wrapper h1::after {
-    padding-left: 15px;
-    font-size: 36px;
+.sheet-section-wrapper-toggle h1 {
+    width: 100%;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.sheet-section-wrapper-toggle h1::after {
+    padding-left: 10px;
+    font-size: 10px;
     font-weight: bold;
-    content: "▾";
+    content: "(click to open)";
 }
 
 input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
@@ -500,10 +513,10 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
 }
 
 .charsheet input[type=checkbox].sheet-section-title-unhide:checked ~ h1::after {
-    content: "▴";
+    content: "(click to close)";
 }
 
-.sheet-section-wrapper input[type=checkbox] {
+.sheet-section-wrapper-toggle input[type=checkbox] {
     position: absolute;
     top: 0;
     right: 0;
@@ -518,3 +531,52 @@ input[type=checkbox].sheet-section-title-unhide:not(:checked) ~ .sheet-hidden-if
 input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-checked {
     display: none;
 }
+
+.sheet-weapon-single {
+    text-align: left;
+}
+
+.sheet-attack-container .repitem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sheet-attack-container .sheet-weapon-single {
+    order: 1;
+}
+
+.sheet-attack-container .itemcontrol {
+    position: relative;
+    order: 2;
+}
+
+.sheet-attack-toggle {
+    opacity: 0;
+    width: 8rem;
+}
+
+.sheet-attack-open {
+    margin-left: -8rem;
+}
+
+.sheet-attack-open::after {
+    padding-left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    content: "(define)";
+}
+
+input[type=checkbox].sheet-attack-toggle:hover ~ .sheet-attack-open {
+    color: orange;
+}
+
+.charsheet input[type=checkbox].sheet-attack-toggle:checked ~ .sheet-attack-open::after {
+    content: "(close)";
+}
+
+
+input[type=checkbox].sheet-attack-toggle-unhide:not(:checked) ~ .sheet-hidden-if-unchecked,
+input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-checked {
+    display: none;
+}
+

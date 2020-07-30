@@ -45,9 +45,9 @@
                 </div>
             </div>
         </div>
-        <!-- Talents and specializations section -->
-        <div class="section">
-            <div class="black-bar lightgray-border section-wrapper position-relative">
+        <!-- Talents -->
+        <div class="section padding-bottom-20">
+            <div class="black-bar lightgray-border section-wrapper-toggle position-relative">
                 <input type="checkbox" class="section-title-unhide position-absolute" />
                 <h1>Talents</h1>
                 <div class="help-text padding-bottom-20">
@@ -2516,21 +2516,26 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="black-bar lightgray-border">
-                <label class="white-text">Specializations</label>
-                <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
-                <span class="white-text float-right">&plusmn;</span>
-                <div class="help-text">
+        <!-- Specializations -->
+        <div class="section padding-bottom-20">
+            <div class="black-bar lightgray-border section-wrapper-toggle position-relative">
+                <input type="checkbox" class="section-title-unhide position-absolute" />
+                <h1>Specializations</h1>
+                <div class="help-text padding-bottom-20">
                     Specializations help you to realize your character’s full potential.
                 </div>
                 <div class="help-text hidden-if-unchecked">
-                    Each specialization has a theme on which you can build your character concept. Your character might work for a government agency or corporation, for example, but that could mean being a computer expert, or a researcher, or a master of unarmed combat, among other things. Every specialization has its own unique talent. When you take a second specialization, think about how the two might work together, and what the combination says about your character.
+                    Each specialization has a theme on which you can build your character concept.
+                    Your character might work for a government agency or corporation, for example,
+                    but that could mean being a computer expert, or a researcher, or a master of
+                    unarmed combat, among other things. Every specialization has its own unique
+                    talent. When you take a second specialization, think about how the two might
+                    work together, and what the combination says about your character.
                 </div>
                 <div class="help-text">
-                    <strong>Must be Level 4 or higher. Max 2.</strong>
+                    <strong>Must be Level 4 or higher. Only two specializations are allowed.</strong>
                 </div>
-
+                <!-- Selected specializations -->
                 <div class="focuses">
                     <div>
                         <input type="checkbox" name="attr_spec_academic" class="unhide-content invisible" value="1" />
@@ -3194,7 +3199,7 @@
                     </div>
 
                 </div>
-
+                <!-- Unselected specializations -->
                 <div class="focuses hidden-if-unchecked">
                     <label class="black-bar white-text improve-label">More Specializations</label>
                     <div>
@@ -3486,45 +3491,52 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="black-bar">
-                <label class="white-text">Drive</label>
-            </div>
-            <div class="help-text">
-                Your character’s drive describes what motivates them to act, to say “yes” to an opportunity. Just like an Epstein on a ship, drive is what moves your character forward. Drive gives you cues for action as a player and provides the GM with “hooks” to encourage your character to take action.
-            </div>
-            <div class="textarea">
-                <textarea name="attr_drive"></textarea>
-            </div>
-        </div>
-        <div class="section">
-            <div class="black-bar">
-                <label class="white-text">Relationships</label>
-            </div>
-            <div class="help-text">
-                Once per game session you can get as many SP as your Relationship rating to perform any stunt that would be in-character when it comes to interacting with that character. You choose this after you see if you succeed on a test.
-            </div>
-            <div class="relationships">
-                <fieldset class="repeating_relationships">
-                    <input type="number" name="attr_relationship_level" /><input type="text" name="attr_relationship_partner" />
-                </fieldset>
+        <!-- Drive -->
+        <div class="section padding-bottom-20">
+            <div class="section-wrapper lightgray-border position-relative">
+                <h1>Drive</h1>
+                <div class="help-text padding-bottom-20">
+                    Your character’s drive describes what motivates them to act, to say “yes” to an
+                    opportunity. Just like an Epstein on a ship, drive is what moves your character
+                    forward. Drive gives you cues for action as a player and provides the GM with “hooks”
+                    to encourage your character to take action.
+                </div>
+                <div>
+                    <textarea name="attr_drive"></textarea>
+                </div>
             </div>
         </div>
-        <div class="section">
-            <div class="black-bar">
-                <label class="white-text">Attacks</label>
+        <!-- Relationships -->
+        <div class="section padding-bottom-20">
+            <div class="section-wrapper lightgray-border position-relative">
+                <h1>Relatonships</h1>
+                <div class="help-text padding-bottom-20">
+                    Once per game session you can get as many SP as your Relationship rating to perform any stunt that
+                    would be in-character when it comes to interacting with that character. You choose this after you
+                    see if you succeed on a test.
+                </div>
+                <div class="relationships">
+                    <fieldset class="repeating_relationships">
+                        <input min="1" max="5" type="number" name="attr_relationship_level" /><input type="text" name="attr_relationship_partner" />
+                    </fieldset>
+                </div>
             </div>
-            <div class="help-text">
-                Attacks allow you to do damage to opponents.
             </div>
-            <fieldset class="repeating_weapons">
-                <div class="subsection">
-                    <div class="black-bar">
-                        <input type="text" name="attr_weapon_name" />
-                        <input type="checkbox" class="unhide-content styled-sibling-floated float-right" />
-                        <span class="white-text float-right">&plusmn;</span>
-
-
+        <!-- Attacks -->
+        <div class="section padding-bottom-20">
+            <div class="section-wrapper lightgray-border position-relative attack-container">
+                <h1>Attacks</h1>
+                <div class="help-text padding-5 padding-bottom-20">
+                    Attacks allow you to do damage to opponents. Below is a list of attack options. You may
+                    add new attacks with the Add button and modify or delete current attacks with the Modify button.
+                </div>
+                <fieldset class="repeating_weapons">
+                    <div class="weapon-single position-relative padding-bottom-10">
+                        <button type='roll' value='!theexpanse|||damage|||@{character_name}|||[[@{weapon_damage_base}]]|||Damage|||@{weapon_damage_bonus}|||?{Additional Modifiers|0}'>
+                        </button>
+                        <input class="padding-bottom-5" type="text" name="attr_weapon_name" />
+                        <input type="checkbox" class="unhide-content attack-toggle" />
+                        <span class="attack-open"></span>
                         <div class="hidden-if-unchecked aliceblue-bg dynamic-subsection justify">
                             <div>
                                 <select name="attr_weapon_type">
@@ -3536,11 +3548,9 @@
                                     <option value="grenade">Grenade</option>
                                     <option value="makeshift">Makeshift</option>
                                 </select>
-                            </div>
-                            <div>
-                                <label>Range</label>
+                                <label>RNG</label>
                                 <input type="number" name="attr_weapon_range" />
-                                <label>Meters</label>
+                                <label>m</label>
                             </div>
                             <div>
                                 <label>Damage Base</label>
@@ -3558,19 +3568,17 @@
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{dexterity}" /> <label>DEX</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{perception}" /> <label>PER</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{strength}" /> <label>STR</label>
+                                <div class="bordered-box margin-5">
+                                    <label>Qualities, Flaws, Notes</label>
+                                    <textarea name="attr_weapon_qfn"></textarea>
+                                </div>
                             </div>
-                            <div class="bordered-box margin-5">
-                                <label>Qualities, Flaws, Notes</label>
-                                <textarea name="attr_weapon_qfn"></textarea>
-                            </div>
-                            <button type='roll' value='!theexpanse|||damage|||@{character_name}|||[[@{weapon_damage_base}]]|||Damage|||@{weapon_damage_bonus}|||?{Additional Modifiers|0}'>
-                                Roll for Damage
-                            </button>
                         </div>
                     </div>
-                </div>
-            </fieldset>
+                </fieldset>
+            </div>
         </div>
+        <!-- Defense -->
         <div class="2colrow">
             <div class="col">
                 <div class="black-bar margin-5">
