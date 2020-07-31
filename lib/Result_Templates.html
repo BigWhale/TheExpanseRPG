@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll20 The Expanse Character Sheet Card Templates</title>
+</head>
+<body>
+    <div style="width: 40%;">
+        <p>
+            Result templates that are used in TheExpanseAPI.js as output.
+            In the future I might create a tool that will autogenerate
+            JS spaghetti that's needed to display this in Roll20. :)
+        </p>
+        <p>
+            Please note that styling is slightly different here, because Roll20 does its thing with styling.
+        </p>
+    </div>
+    <div style='border: 1px solid black; width: 300px; margin: 50px 150px;'>
+
+        <h3 style='text-align: center;'>Ability Tests</h3>
+        <h4 style='text-align: center;'>Success</h4>
+        <div style='background-color: #054d69; border: 1px solid black; width: 95%; margin: 10px auto 0 auto; border-radius: 5px 5px 0 0;'>
+            <div style='width: 100%; color: #fff; font-weight: bold; font-size: 1.4rem; text-align: center;'>Player's Name</div>
+            <div style='width: 100%; color: #dbeaee; font-style: italic; font-size: .8rem; text-align: center;'>Ability Test</div>
+        </div>
+        <div style='background-color: #dbeaee; border: 1px solid black; text-align: center; border-top: none; width: 95%; padding-top: 10px; margin: 0 auto 10px auto; border-radius: 0 0 5px 5px;'>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Strength</div>
+            <div style='margin-bottom: 10px;'>Modifiers: <span style='color: black;'>2</span></div>
+            <table style='width: 90%; border-collapse: collapse; border-bottom: 1px solid black; margin: 0 auto 10px auto;'>
+                <tr style='font-size: .8rem; color: #707070;'><td style='width: 33.3%'>First Die</td><td style='width: 33.3%'>Second Die</td><td style='background-color: #c7d5d9;'>Drama Die</td></tr>
+                <tr style='font-size: 1.4rem;'><td>1</td><td>2</td><td style='background-color: #c7d5d9'>3</td></tr>
+            </table>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Result: <span>8</span> vs. <span>5</span></div>
+            <div style='background-color: #006400; color: #fff; width: 50%; margin: 0 auto 10px auto; font-size: 1.4rem;'>Success</div>
+        </div>
+
+        <h4 style='text-align: center;'>Success with Stunt points</h4>
+        <div style='background-color: #054d69; border: 1px solid black; width: 95%; margin: 10px auto 0 auto; border-radius: 5px 5px 0 0;'>
+            <div style='width: 100%; color: #fff; font-weight: bold; font-size: 1.4rem; text-align: center;'>Player's Name</div>
+            <div style='width: 100%; color: #dbeaee; font-style: italic; font-size: .8rem; text-align: center;'>Ability Test</div>
+        </div>
+        <div style='background-color: #dbeaee; border: 1px solid black; text-align: center; border-top: none; width: 95%; padding-top: 10px; margin: 0 auto 10px auto; border-radius: 0 0 5px 5px;'>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Accuracy</div>
+            <div style='margin-bottom: 10px;'>Modifiers: <span style='color: black;'>3</span></div>
+            <table style='width: 90%; border-collapse: collapse; border-bottom: 1px solid black; margin: 0 auto 10px auto;'>
+                <tr style='font-size: .8rem; color: #707070;'><td style='width: 33.3%'>First Die</td><td style='width: 33.3%'>Second Die</td><td style='background-color: #c7d5d9;'>Drama Die</td></tr>
+                <tr style='font-size: 1.4rem;'><td>2</td><td>2</td><td style='background-color: #c7d5d9'>3</td></tr>
+            </table>
+            <div style='width: 90%; margin: 0 auto 10px auto; font-size: 1.1rem; background-color: #f5ac86;'>Stunt points: 3</div>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Result: <span>10</span> vs. <span>9</span></div>
+            <div style='background-color: #006400; color: #fff; width: 50%; margin: 0 auto 10px auto; font-size: 1.4rem;'>Success</div>
+        </div>
+
+        <h4 style='text-align: center;'>Fail</h4>
+        <div style='background-color: #054d69; border: 1px solid black; width: 95%; margin: 10px auto 0 auto; border-radius: 5px 5px 0 0;'>
+            <div style='width: 100%; color: #fff; font-weight: bold; font-size: 1.4rem; text-align: center;'>Player's Name</div>
+            <div style='width: 100%; color: #dbeaee; font-style: italic; font-size: .8rem; text-align: center;'>Ability Test</div>
+        </div>
+        <div style='background-color: #dbeaee; border: 1px solid black; text-align: center; border-top: none; width: 95%; padding-top: 10px; margin: 0 auto 10px auto; border-radius: 0 0 5px 5px;'>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Accuracy</div>
+            <div style='margin-bottom: 10px;'>Modifiers: <span style='color: #8b0000;'>-2</span></div>
+            <table style='width: 90%; border-collapse: collapse; border-bottom: 1px solid black; margin: 0 auto 10px auto;'>
+                <tr style='font-size: .8rem; color: #707070;'><td style='width: 33.3%'>First Die</td><td style='width: 33.3%'>Second Die</td><td style='background-color: #c7d5d9;'>Drama Die</td></tr>
+                <tr style='font-size: 1.4rem;'><td>1</td><td>2</td><td style='background-color: #c7d5d9'>3</td></tr>
+            </table>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Result: <span>4</span> vs. <span>9</span></div>
+            <div style='background-color: #8b0000; color: #fff; width: 50%; margin: 0 auto 10px auto; font-size: 1.4rem;'>Fail</div>
+        </div>
+
+        <h3 style='text-align: center;'>Damage Rolls</h3>
+
+        <div style='background-color: #054d69; border: 1px solid black; width: 95%; margin: 10px auto 0 auto; border-radius: 5px 5px 0 0;'>
+            <div style='width: 100%; color: #fff; font-weight: bold; font-size: 1.4rem; text-align: center;'>Player's Name</div>
+            <div style='width: 100%; color: #dbeaee; font-style: italic; font-size: .8rem; text-align: center;'>Damage Roll</div>
+        </div>
+        <div style='background-color: #dbeaee; border: 1px solid black; text-align: center; border-top: none; width: 95%; padding-top: 10px; margin: 0 auto 10px auto; border-radius: 0 0 5px 5px;'>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Weapon's Name/Attack Type</div>
+            <div style='margin-bottom: 10px;'>Modifiers: <span style='color: black;'>2</span></div>
+            <table style='width: 90%; border-collapse: collapse; border-bottom: 1px solid black; margin: 0 auto 10px auto;'>
+                <tr style='font-size: .8rem; color: #707070;'><td style='width: 33.3%'>First Die</td><td style='width: 33.3%'>Second Die</td><td>Third Die</td></tr>
+                <tr style='font-size: 1.4rem;'><td>1</td><td>2</td><td>3</td></tr>
+            </table>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Damage: 8</div>
+        </div>
+
+        <div style='background-color: #054d69; border: 1px solid black; width: 95%; margin: 10px auto 0 auto; border-radius: 5px 5px 0 0;'>
+            <div style='width: 100%; color: #fff; font-weight: bold; font-size: 1.4rem; text-align: center;'>Player's Name</div>
+            <div style='width: 100%; color: #dbeaee; font-style: italic; font-size: .8rem; text-align: center;'>Damage Roll</div>
+        </div>
+        <div style='background-color: #dbeaee; border: 1px solid black; text-align: center; border-top: none; width: 95%; padding-top: 10px; margin: 0 auto 10px auto; border-radius: 0 0 5px 5px;'>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Weapon's Name/Attack Type</div>
+            <div style='margin-bottom: 10px;'>Modifiers: <span style='color: black;'>2</span></div>
+            <table style='width: 90%; border-collapse: collapse; border-bottom: 1px solid black; margin: 0 auto 10px auto;'>
+                <tr style='font-size: .8rem; color: #707070;'><td style='width: 33.3%'>First Die</td></tr>
+                <tr style='font-size: 1.4rem;'><td>3</td></tr>
+            </table>
+            <div style='margin-bottom: 10px; font-size: 1.2rem;'>Damage: 5</div>
+        </div>
+
+
+    </div>
+</body>
+</html>

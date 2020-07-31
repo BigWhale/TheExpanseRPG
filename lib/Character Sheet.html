@@ -4,7 +4,7 @@
             <label>Name</label><input type="text" name="attr_character_name" />
             <label>Level</label><input type="number" name="attr_level" value="1" />
         </div>
-        <button class="padding-y-5" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
+        <button class="padding-y-5" type='roll' value='!theexpanse|||initiative|||@{character_name}|||[[3d6]]|||Dexterity (Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||???'>
             Roll for Initiative
         </button>
         <button class="padding-y-5" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Simple Check|||0|||0|||?{Additional Modifiers|0}|||???'>
@@ -104,7 +104,7 @@
                             </div>
                             <div class="justify position-relative">
                                 <p>You move with grace, speed, and ease.</p>
-                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity (Acrobatics) focus.</p>
                                 <div class="dynamic-subsection-talents justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_talent_agility_novice" class="styled-toggle" value="1" checked/>
@@ -1713,7 +1713,7 @@
                             </div>
                             <div class="tiny-text help-text aliceblue-bg justify">
                                 <p>You move with grace, speed, and ease.</p>
-                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity(Acrobatics) focus.</p>
+                                <p><strong>Requirements: </strong> Dexterity 2 and the Dexterity (Acrobatics) focus.</p>
                                 <input type="checkbox" class="unhide-content styled-sibling" />
                                 <span>&plusmn; Show More</span>
                                 <div class="hidden-if-unchecked">
@@ -3537,20 +3537,21 @@
                         <input class="padding-bottom-5" type="text" name="attr_weapon_name" />
                         <input type="checkbox" class="unhide-content attack-toggle" />
                         <span class="attack-open"></span>
-                        <div class="hidden-if-unchecked aliceblue-bg dynamic-subsection justify">
-                            <div>
+                        <div class="hidden-if-unchecked aliceblue-bg padding-top-10 weapon-def">
+                            <div class="weapon-type">
+                                <label>Type</label>
                                 <select name="attr_weapon_type">
                                     <option value=""></option>
-                                    <option value="light">Light Close</option>
-                                    <option value="heavy">Heavy Close</option>
+                                    <option value="light">Light Melee</option>
+                                    <option value="heavy">Heavy Melee</option>
                                     <option value="pistol">Pistol</option>
                                     <option value="rifle">Rifle</option>
                                     <option value="grenade">Grenade</option>
                                     <option value="makeshift">Makeshift</option>
                                 </select>
                                 <label>RNG</label>
-                                <input type="number" name="attr_weapon_range" />
-                                <label>m</label>
+                                <input min="0" type="number" name="attr_weapon_range" />
+                                <label> m</label>
                             </div>
                             <div>
                                 <label>Damage Base</label>
@@ -3562,15 +3563,15 @@
                                     <option value="3d6">3d6</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="margin-bottom-10">
                                 <label>Damage Bonus</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="0" checked/> <label>None</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{dexterity}" /> <label>DEX</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{perception}" /> <label>PER</label>
                                 <input type="radio" name="attr_weapon_damage_bonus" value="@{strength}" /> <label>STR</label>
-                                <div class="bordered-box margin-5">
+                                <div class="margin-top-10">
                                     <label>Qualities, Flaws, Notes</label>
-                                    <textarea name="attr_weapon_qfn"></textarea>
+                                    <textarea class="weapon-quality" name="attr_weapon_qfn"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -3730,7 +3731,7 @@
                         <input type="checkbox" name="attr_focus_bows" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy(Bows)|||@{accuracy}|||@{focus_bows_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Bows)|||@{accuracy}|||@{focus_bows_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Bows
                                 </button>
 
@@ -3752,7 +3753,7 @@
                         <input type="checkbox" name="attr_focus_gunnery" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy(Gunnery)|||@{accuracy}|||@{focus_gunnery_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Gunnery)|||@{accuracy}|||@{focus_gunnery_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Gunnery
                                 </button>
 
@@ -3774,7 +3775,7 @@
                         <input type="checkbox" name="attr_focus_pistols" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy(Pistols)|||@{accuracy}|||@{focus_pistols_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Pistols)|||@{accuracy}|||@{focus_pistols_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Pistols
                                 </button>
 
@@ -3796,7 +3797,7 @@
                         <input type="checkbox" name="attr_focus_rifles" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy(Rifles)|||@{accuracy}|||@{focus_rifles_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Rifles)|||@{accuracy}|||@{focus_rifles_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Rifles
                                 </button>
 
@@ -3818,7 +3819,7 @@
                         <input type="checkbox" name="attr_focus_throwing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy(Throwing)|||@{accuracy}|||@{focus_throwing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Throwing)|||@{accuracy}|||@{focus_throwing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Throwing
                                 </button>
 
@@ -3926,7 +3927,7 @@
                         <input type="checkbox" name="attr_focus_bargaining" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Bargaining)|||@{communication}|||@{focus_bargaining_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Bargaining)|||@{communication}|||@{focus_bargaining_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Bargaining
                                 </button>
 
@@ -3948,7 +3949,7 @@
                         <input type="checkbox" name="attr_focus_deception" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Deception)|||@{communication}|||@{focus_deception_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Deception)|||@{communication}|||@{focus_deception_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Deception
                                 </button>
 
@@ -3970,7 +3971,7 @@
                         <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Disguise)|||@{communication}|||@{focus_disguise_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Disguise)|||@{communication}|||@{focus_disguise_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Disguise
                                 </button>
 
@@ -3992,7 +3993,7 @@
                         <input type="checkbox" name="attr_focus_etiquette" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Etiquette)|||@{communication}|||@{focus_etiquette_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Etiquette)|||@{communication}|||@{focus_etiquette_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Etiquette
                                 </button>
 
@@ -4014,7 +4015,7 @@
                         <input type="checkbox" name="attr_focus_expression" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Expression)|||@{communication}|||@{focus_expression_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Expression)|||@{communication}|||@{focus_expression_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Expression
                                 </button>
 
@@ -4036,7 +4037,7 @@
                         <input type="checkbox" name="attr_focus_gambling" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Gambling)|||@{communication}|||@{focus_gambling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Gambling)|||@{communication}|||@{focus_gambling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Gambling
                                 </button>
 
@@ -4058,7 +4059,7 @@
                         <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Investigation)|||@{communication}|||@{focus_investigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Investigation)|||@{communication}|||@{focus_investigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Investigation
                                 </button>
 
@@ -4080,7 +4081,7 @@
                         <input type="checkbox" name="attr_focus_leadership" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Leadership)|||@{communication}|||@{focus_leadership_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Leadership)|||@{communication}|||@{focus_leadership_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Leadership
                                 </button>
 
@@ -4102,7 +4103,7 @@
                         <input type="checkbox" name="attr_focus_performing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Performing)|||@{communication}|||@{focus_performing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Performing)|||@{communication}|||@{focus_performing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Performing
                                 </button>
 
@@ -4124,7 +4125,7 @@
                         <input type="checkbox" name="attr_focus_persuasion" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Persuasion)|||@{communication}|||@{focus_persuasion_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Persuasion)|||@{communication}|||@{focus_persuasion_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Persuasion
                                 </button>
 
@@ -4146,7 +4147,7 @@
                         <input type="checkbox" name="attr_focus_seduction" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication(Seduction)|||@{communication}|||@{focus_seduction_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Communication (Seduction)|||@{communication}|||@{focus_seduction_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Seduction
                                 </button>
 
@@ -4331,7 +4332,7 @@
                         <input type="checkbox" name="attr_focus_running" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution(Running)|||@{constitution}|||@{focus_running_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution (Running)|||@{constitution}|||@{focus_running_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Running
                                 </button>
 
@@ -4353,7 +4354,7 @@
                         <input type="checkbox" name="attr_focus_stamina" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution(Stamina)|||@{constitution}|||@{focus_stamina_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution (Stamina)|||@{constitution}|||@{focus_stamina_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Stamina
                                 </button>
 
@@ -4375,7 +4376,7 @@
                         <input type="checkbox" name="attr_focus_swimming" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution(Swimming)|||@{constitution}|||@{focus_swimming_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution (Swimming)|||@{constitution}|||@{focus_swimming_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Swimming
                                 </button>
 
@@ -4397,7 +4398,7 @@
                         <input type="checkbox" name="attr_focus_tolerance" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution(Tolerance)|||@{constitution}|||@{focus_tolerance_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Constitution (Tolerance)|||@{constitution}|||@{focus_tolerance_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Tolerance
                                 </button>
 
@@ -4491,7 +4492,7 @@
                         <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Acrobatics)|||@{dexterity}|||@{focus_acrobatics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Acrobatics)|||@{dexterity}|||@{focus_acrobatics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Acrobatics
                                 </button>
 
@@ -4513,7 +4514,7 @@
                         <input type="checkbox" name="attr_focus_crafting" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Crafting)|||@{dexterity}|||@{focus_crafting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Crafting)|||@{dexterity}|||@{focus_crafting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Crafting
                                 </button>
 
@@ -4535,7 +4536,7 @@
                         <input type="checkbox" name="attr_focus_driving" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Driving)|||@{dexterity}|||@{focus_driving_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Driving)|||@{dexterity}|||@{focus_driving_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Driving
                                 </button>
 
@@ -4557,7 +4558,7 @@
                         <input type="checkbox" name="attr_focus_freefall" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Free-Fall)|||@{dexterity}|||@{focus_freefall_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Free-Fall)|||@{dexterity}|||@{focus_freefall_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Free-Fall
                                 </button>
 
@@ -4579,7 +4580,7 @@
                         <input type="checkbox" name="attr_focus_initiative" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Initiative)|||@{dexterity}|||@{focus_initiative_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Initiative
                                 </button>
 
@@ -4601,7 +4602,7 @@
                         <input type="checkbox" name="attr_focus_piloting" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Piloting)|||@{dexterity}|||@{focus_piloting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Piloting)|||@{dexterity}|||@{focus_piloting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Piloting
                                 </button>
 
@@ -4623,7 +4624,7 @@
                         <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Sleight of Hand)|||@{dexterity}|||@{focus_sleight_of_hand_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Sleight of Hand)|||@{dexterity}|||@{focus_sleight_of_hand_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Sleight of Hand
                                 </button>
 
@@ -4645,7 +4646,7 @@
                         <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity(Stealth)|||@{dexterity}|||@{focus_stealth_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Dexterity (Stealth)|||@{dexterity}|||@{focus_stealth_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Stealth
                                 </button>
 
@@ -4791,7 +4792,7 @@
                         <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting(Brawling)|||@{fighting}|||@{focus_brawling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting (Brawling)|||@{fighting}|||@{focus_brawling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Brawling
                                 </button>
 
@@ -4813,7 +4814,7 @@
                         <input type="checkbox" name="attr_focus_grappling" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting(Grappling)|||@{fighting}|||@{focus_grappling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting (Grappling)|||@{fighting}|||@{focus_grappling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Grappling
                                 </button>
 
@@ -4835,7 +4836,7 @@
                         <input type="checkbox" name="attr_focus_heavy_weapons" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting(Heavy Weapons)|||@{fighting}|||@{focus_heavy_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting (Heavy Weapons)|||@{fighting}|||@{focus_heavy_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Heavy Weapons
                                 </button>
 
@@ -4857,7 +4858,7 @@
                         <input type="checkbox" name="attr_focus_light_weapons" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting(Light Weapons)|||@{fighting}|||@{focus_light_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Fighting (Light Weapons)|||@{fighting}|||@{focus_light_weapons_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Light Weapons
                                 </button>
 
@@ -4951,7 +4952,7 @@
                         <input type="checkbox" name="attr_focus_art" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Art)|||@{intelligence}|||@{focus_art_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Art)|||@{intelligence}|||@{focus_art_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Art
                                 </button>
 
@@ -4973,7 +4974,7 @@
                         <input type="checkbox" name="attr_focus_business" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Business)|||@{intelligence}|||@{focus_business_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Business)|||@{intelligence}|||@{focus_business_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Business
                                 </button>
 
@@ -4995,7 +4996,7 @@
                         <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Cryptography)|||@{intelligence}|||@{focus_cryptography_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Cryptography)|||@{intelligence}|||@{focus_cryptography_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Cryptography
                                 </button>
 
@@ -5017,7 +5018,7 @@
                         <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Current Affairs)|||@{intelligence}|||@{focus_current_affairs_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Current Affairs)|||@{intelligence}|||@{focus_current_affairs_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Current Affairs
                                 </button>
 
@@ -5039,7 +5040,7 @@
                         <input type="checkbox" name="attr_focus_demolitions" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Demolitions)|||@{intelligence}|||@{focus_demolitions_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Demolitions)|||@{intelligence}|||@{focus_demolitions_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Demolitions
                                 </button>
 
@@ -5061,7 +5062,7 @@
                         <input type="checkbox" name="attr_focus_engineering" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Engineering)|||@{intelligence}|||@{focus_engineering_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Engineering)|||@{intelligence}|||@{focus_engineering_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Engineering
                                 </button>
 
@@ -5083,7 +5084,7 @@
                         <input type="checkbox" name="attr_focus_evaluation" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Evaluation)|||@{intelligence}|||@{focus_evaluation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Evaluation)|||@{intelligence}|||@{focus_evaluation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Evaluation
                                 </button>
 
@@ -5105,7 +5106,7 @@
                         <input type="checkbox" name="attr_focus_law" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Law)|||@{intelligence}|||@{focus_law_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Law)|||@{intelligence}|||@{focus_law_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Law
                                 </button>
 
@@ -5127,7 +5128,7 @@
                         <input type="checkbox" name="attr_focus_medicine" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Medicine)|||@{intelligence}|||@{focus_medicine_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Medicine)|||@{intelligence}|||@{focus_medicine_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Medicine
                                 </button>
 
@@ -5149,7 +5150,7 @@
                         <input type="checkbox" name="attr_focus_navigation" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Navigation)|||@{intelligence}|||@{focus_navigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Navigation)|||@{intelligence}|||@{focus_navigation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Navigation
                                 </button>
 
@@ -5171,7 +5172,7 @@
                         <input type="checkbox" name="attr_focus_research" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Research)|||@{intelligence}|||@{focus_research_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Research)|||@{intelligence}|||@{focus_research_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Research
                                 </button>
 
@@ -5193,7 +5194,7 @@
                         <input type="checkbox" name="attr_focus_science" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Science)|||@{intelligence}|||@{focus_science_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Science)|||@{intelligence}|||@{focus_science_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Science
                                 </button>
 
@@ -5215,7 +5216,7 @@
                         <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Security)|||@{intelligence}|||@{focus_security_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Security)|||@{intelligence}|||@{focus_security_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Security
                                 </button>
 
@@ -5237,7 +5238,7 @@
                         <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Tactics)|||@{intelligence}|||@{focus_tactics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Tactics)|||@{intelligence}|||@{focus_tactics_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Tactics
                                 </button>
 
@@ -5259,7 +5260,7 @@
                         <input type="checkbox" name="attr_focus_technology" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence(Technology)|||@{intelligence}|||@{focus_technology_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Intelligence (Technology)|||@{intelligence}|||@{focus_technology_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Technology
                                 </button>
 
@@ -5496,7 +5497,7 @@
                         <input type="checkbox" name="attr_focus_empathy" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Empathy)|||@{perception}|||@{focus_empathy_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Empathy)|||@{perception}|||@{focus_empathy_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Empathy
                                 </button>
 
@@ -5518,7 +5519,7 @@
                         <input type="checkbox" name="attr_focus_hearing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Hearing)|||@{perception}|||@{focus_hearing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Hearing)|||@{perception}|||@{focus_hearing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Hearing
                                 </button>
 
@@ -5540,7 +5541,7 @@
                         <input type="checkbox" name="attr_focus_intuition" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Intuition)|||@{perception}|||@{focus_intuition_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Intuition)|||@{perception}|||@{focus_intuition_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Intuition
                                 </button>
 
@@ -5562,7 +5563,7 @@
                         <input type="checkbox" name="attr_focus_searching" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Searching)|||@{perception}|||@{focus_searching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Searching)|||@{perception}|||@{focus_searching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Searching
                                 </button>
 
@@ -5584,7 +5585,7 @@
                         <input type="checkbox" name="attr_focus_seeing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Seeing)|||@{perception}|||@{focus_seeing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Seeing)|||@{perception}|||@{focus_seeing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Seeing
                                 </button>
 
@@ -5606,7 +5607,7 @@
                         <input type="checkbox" name="attr_focus_smelling" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Smelling)|||@{perception}|||@{focus_smelling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Smelling)|||@{perception}|||@{focus_smelling_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Smelling
                                 </button>
 
@@ -5628,7 +5629,7 @@
                         <input type="checkbox" name="attr_focus_survival" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Survival)|||@{perception}|||@{focus_survival_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Survival)|||@{perception}|||@{focus_survival_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Survival
                                 </button>
 
@@ -5650,7 +5651,7 @@
                         <input type="checkbox" name="attr_focus_tasting" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Tasting)|||@{perception}|||@{focus_tasting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Tasting)|||@{perception}|||@{focus_tasting_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Tasting
                                 </button>
 
@@ -5672,7 +5673,7 @@
                         <input type="checkbox" name="attr_focus_touching" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Touching)|||@{perception}|||@{focus_touching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Touching)|||@{perception}|||@{focus_touching_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Touching
                                 </button>
 
@@ -5694,7 +5695,7 @@
                         <input type="checkbox" name="attr_focus_tracking" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception(Tracking)|||@{perception}|||@{focus_tracking_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Perception (Tracking)|||@{perception}|||@{focus_tracking_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Tracking
                                 </button>
 
@@ -5866,7 +5867,7 @@
                         <input type="checkbox" name="attr_focus_climbing" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength(Climbing)|||@{strength}|||@{focus_climbing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength (Climbing)|||@{strength}|||@{focus_climbing_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Climbing
                                 </button>
 
@@ -5888,7 +5889,7 @@
                         <input type="checkbox" name="attr_focus_intimidation" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength(Intimidation)|||@{strength}|||@{focus_intimidation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength (Intimidation)|||@{strength}|||@{focus_intimidation_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Intimidation
                                 </button>
 
@@ -5910,7 +5911,7 @@
                         <input type="checkbox" name="attr_focus_jumping" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength(Jumping)|||@{strength}|||@{focus_jumping_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength (Jumping)|||@{strength}|||@{focus_jumping_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Jumping
                                 </button>
 
@@ -5932,7 +5933,7 @@
                         <input type="checkbox" name="attr_focus_might" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength(Might)|||@{strength}|||@{focus_might_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Strength (Might)|||@{strength}|||@{focus_might_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Might
                                 </button>
 
@@ -6026,7 +6027,7 @@
                         <input type="checkbox" name="attr_focus_courage" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower(Courage)|||@{willpower}|||@{focus_courage_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower (Courage)|||@{willpower}|||@{focus_courage_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Courage
                                 </button>
 
@@ -6048,7 +6049,7 @@
                         <input type="checkbox" name="attr_focus_faith" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower(Faith)|||@{willpower}|||@{focus_faith_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower (Faith)|||@{willpower}|||@{focus_faith_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Faith
                                 </button>
 
@@ -6070,7 +6071,7 @@
                         <input type="checkbox" name="attr_focus_self_discipline" class="unhide-content invisible" value="1" />
                         <div class="hidden-if-unchecked dynamic-content">
                             <div class="black-bar">
-                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower(Self-Discipline)|||@{willpower}|||@{focus_self_discipline_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
+                                <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Willpower (Self-Discipline)|||@{willpower}|||@{focus_self_discipline_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
                                     Self-Discipline
                                 </button>
 
