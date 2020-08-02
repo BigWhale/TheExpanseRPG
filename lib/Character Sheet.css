@@ -116,7 +116,7 @@ input[type=checkbox].sheet-styled-sibling-floated:checked + span,
 input[type=checkbox].sheet-styled-sibling-floated:hover + span,
 input[type=checkbox].sheet-styled-sibling:checked + span,
 input[type=checkbox].sheet-styled-sibling:hover + span {
-    color: orange;
+    color: #e7471a;
 }
 
 input[type=checkbox].sheet-styled-sibling-floated + span,
@@ -146,7 +146,7 @@ input[type=checkbox].sheet-styled-toggle {
 
 input[type=checkbox].sheet-styled-toggle:checked + span,
 input[type=checkbox].sheet-styled-toggle:hover + span {
-    color: orange;
+    color: #e7471a;
 }
 
 input[type=checkbox].sheet-styled-toggle + span {
@@ -172,7 +172,7 @@ input[type=checkbox].sheet-styled-toggle + span {
 }
 
 .sheet-black-bar {
-    background-color: black;
+    background-color: #054d69;
 }
 
 .sheet-black-bar-full {
@@ -327,7 +327,7 @@ input[type=checkbox].sheet-styled-toggle + span {
 input[type=checkbox]:checked + label.sheet-checked-glow,
 .sheet-btn-invisible:hover,
 .sheet-hover-glow:hover {
-    color: orange;
+    color: #e7471a;
     cursor: pointer;
 }
 
@@ -336,7 +336,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 }
 
 .sheet-focus {
-    background: aliceblue;
+    background: #dbeaee;
 }
 
 .sheet-subsection {
@@ -376,7 +376,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 
 .sheet-dynamic-content-small,
 .sheet-dynamic-content {
-    background: aliceblue;
+    background: #dbeaee;
     border-radius: 15px;
     float: left;
     margin: 5px;
@@ -397,7 +397,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 
 .sheet-aliceblue-bg {
     position: relative;
-    background: aliceblue;
+    background: #dbeaee;
 }
 
 .sheet-improve-label {
@@ -509,7 +509,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 }
 
 input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
-    color: orange;
+    color: #e7471a;
 }
 
 .charsheet input[type=checkbox].sheet-section-title-unhide:checked ~ h1::after {
@@ -572,7 +572,7 @@ input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-check
 }
 
 input[type=checkbox].sheet-attack-toggle:hover ~ .sheet-attack-open {
-    color: orange;
+    color: #e7471a;
 }
 
 .charsheet input[type=checkbox].sheet-attack-toggle:checked ~ .sheet-attack-open::after {
