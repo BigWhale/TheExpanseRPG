@@ -3532,7 +3532,7 @@
                 </div>
                 <fieldset class="repeating_weapons">
                     <div class="weapon-single position-relative padding-bottom-10">
-                        <button type='roll' value='!theexpanse|||damage|||@{character_name}|||[[@{weapon_damage_base}]]|||Damage|||@{weapon_damage_bonus}|||?{Additional Modifiers|0}'>
+                        <button type='roll' value='!theexpanse|||damage|||@{character_name}|||@{weapon_name}|||[[@{weapon_damage_base}]]|||@{weapon_damage_bonus}|||?{Additional Modifiers|0}'>
                         </button>
                         <input class="padding-bottom-5" type="text" name="attr_weapon_name" />
                         <input type="checkbox" class="unhide-content attack-toggle" />
@@ -3542,8 +3542,9 @@
                                 <label>Type</label>
                                 <select name="attr_weapon_type">
                                     <option value=""></option>
-                                    <option value="light">Light Melee</option>
-                                    <option value="heavy">Heavy Melee</option>
+                                    <option value="unarmed">Unarmed</option>
+                                    <option value="light">Light Close</option>
+                                    <option value="heavy">Heavy Close</option>
                                     <option value="pistol">Pistol</option>
                                     <option value="rifle">Rifle</option>
                                     <option value="grenade">Grenade</option>
