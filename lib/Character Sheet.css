@@ -798,9 +798,19 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
     color: #fff;
 }
 
-.sheet-ability .sheet-selected-focuses button.btn {
+.sheet-ability .sheet-selected-focuses button.sheet-btn {
     width: 170px;
     margin: 0;
     position: relative;
     bottom: 2px;
+}
+
+.sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked {
+    position: relative;
+}
+
+.sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked > .sheet-blue-bar > button {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
