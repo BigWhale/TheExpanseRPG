@@ -151,11 +151,11 @@ input[type=checkbox].sheet-styled-toggle + span {
 	width: 17%;
 }
 
-.sheet-black-bar {
+.sheet-blue-bar {
     background-color: #054d69;
 }
 
-.sheet-black-bar-full {
+.sheet-blue-bar-full {
     width: 100%;
 }
 
@@ -723,15 +723,20 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
     background-color: #054d69;
     line-height: 28px;
 }
+
 .sheet-ability h2::after {
     text-transform: lowercase;
     padding-left: 10px;
     font-size: 9px;
     font-weight: bold;
-    content: "(click)";
+    content: "(open)";
     position: absolute;
     z-index: 1;
     top: 3px;
+}
+
+.sheet-ability input[type=checkbox]:checked ~ h2::after {
+    content: "(close)";
 }
 
 .sheet-ability-wrapper {
