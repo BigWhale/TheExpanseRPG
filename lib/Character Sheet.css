@@ -785,9 +785,22 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
 .sheet-ability .sheet-unselected-focuses > div {
     margin-bottom: 10px;
     background-color: #dbeaee;
+    position: relative;
 }
 
 .sheet-ability .sheet-selected-focuses > div > div,
 .sheet-ability .sheet-unselected-focuses > div > div {
     width: 185px;
+}
+
+.sheet-ability .sheet-selected-focuses h3 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.sheet-ability .sheet-selected-focuses button.btn {
+    width: 170px;
+    margin: 0;
+    position: relative;
+    bottom: 2px;
 }
