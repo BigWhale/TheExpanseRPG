@@ -774,16 +774,20 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
     color: #e7471a;
 }
 
+.sheet-ability .sheet-selected-focuses,
 .sheet-ability .sheet-unselected-focuses {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+.sheet-ability .sheet-selected-focuses > div,
 .sheet-ability .sheet-unselected-focuses > div {
     margin-bottom: 10px;
+    background-color: #dbeaee;
 }
 
+.sheet-ability .sheet-selected-focuses > div > div,
 .sheet-ability .sheet-unselected-focuses > div > div {
     width: 185px;
 }
