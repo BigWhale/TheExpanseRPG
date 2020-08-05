@@ -203,7 +203,7 @@
                     They provide a way to customize your character that goes beyond their background.
                 </div>
                 <!-- Selected Talents -->
-                <div class="focuses padding-bottom-20">
+                <div class="talents padding-bottom-20">
                     <!-- Affluent -->
                     <div>
                         <input type="checkbox" name="attr_talent_affluent" class="unhide-content invisible" value="1" />
@@ -3737,7 +3737,7 @@
             <div class="section-wrapper lightgray-border position-relative">
                 <h1 class="margin-bottom-20">Abilities</h1>
                 <!-- Accuracy -->
-                <div class="ability margin-bottom-10">
+                <div class="ability margin-bottom-20">
                     <input type="checkbox" class="unhide-content" />
                     <h2 class="ability-title">Accuracy</h2>
                     <div class="ability-wrapper">
@@ -3750,6 +3750,7 @@
                     <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_bows" class="unhide-content invisible" value="1" />
+
                                 <div class="hidden-if-unchecked dynamic-content">
                                     <div class="blue-bar">
                                         <button class="white-text btn-invisible" type='roll' value='!theexpanse|||test|||@{character_name}|||[[3d6]]|||Accuracy (Bows)|||@{accuracy}|||@{focus_bows_total}|||?{Additional Modifiers|0}|||?{Target Number|Effortless: 5,5|Adeptly: 6,6|Routine: 7,7|Simple: 8,8|Easy: 9,9|Mundane: 10,10|Average: 11,11|Tedious: 12,12|Challenging: 13,13|Tough: 14,14|Hard: 15,15|Arduous: 16,16|Formidable: 17,17|Strenuous: 18,18|Imposing: 19,19|Herculean: 20,20|Nigh Impossible: 21,21|Secret,???}'>
@@ -3861,76 +3862,78 @@
 
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                        <div class="unselected-items">Add Focus</div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_bows" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_bows" class="white-text btn-invisible">
-                                        Bows
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency with string-fired weapons, from a hand-drawn compound bow to a mechanical crossbow.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_gunnery" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_gunnery" class="white-text btn-invisible">
-                                        Gunnery
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency with precision heavy ranged weapons, including ship-mounted weapons.
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
+                            <div>
+                                <input type="checkbox" name="attr_focus_bows" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_bows" class="white-text btn-invisible">
+                                            Bows
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with string-fired weapons, from a hand-drawn compound bow to a mechanical crossbow.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_pistols" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_pistols" class="white-text btn-invisible">
-                                        Pistols
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency with single-grip, short-barrel ballistic weapons.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_rifles" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_rifles" class="white-text btn-invisible">
-                                        Rifles
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency with double-grip, long-barrel ballistic weapons.
+                            <div>
+                                <input type="checkbox" name="attr_focus_gunnery" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_gunnery" class="white-text btn-invisible">
+                                            Gunnery
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with precision heavy ranged weapons, including ship-mounted weapons.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_throwing" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_throwing" class="white-text btn-invisible">
-                                        Throwing
-                                    </button>
+                            <div>
+                                <input type="checkbox" name="attr_focus_pistols" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_pistols" class="white-text btn-invisible">
+                                            Pistols
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with single-grip, short-barrel ballistic weapons.
+                                    </div>
                                 </div>
-                                <div class="focus help-text">
-                                    Proficiency with thrown weapons, including grenades.
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_rifles" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_rifles" class="white-text btn-invisible">
+                                            Rifles
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with double-grip, long-barrel ballistic weapons.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_throwing" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_throwing" class="white-text btn-invisible">
+                                            Throwing
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with thrown weapons, including grenades.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Communication -->
-                <div class="ability margin-bottom-10">
+                <div class="ability margin-bottom-20">
                     <input type="checkbox" class="unhide-content" />
                     <h2 class="ability-title">Communication</h2>
                     <div class="ability-wrapper">
@@ -3940,7 +3943,7 @@
                             This ability covers your social skills and generally making friends and influencing people.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                         <div>
                             <input type="checkbox" name="attr_focus_bargaining" class="unhide-content invisible" value="1" />
                             <div class="hidden-if-unchecked dynamic-content">
@@ -4185,147 +4188,149 @@
                         </div>
                     </div>
                     <div class="focuses hidden-if-unchecked">
-                        <div class="unselected-items">Add Focus</div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_bargaining" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_bargaining" class="white-text btn-invisible">
-                                        Bargaining
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Negotiating with others and making deals.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_deception" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_deception" class="white-text btn-invisible">
-                                        Deception
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Tricking and lying to other people.
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
+                            <div>
+                                <input type="checkbox" name="attr_focus_bargaining" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_bargaining" class="white-text btn-invisible">
+                                            Bargaining
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Negotiating with others and making deals.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible">
-                                        Disguise
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Changing your appearance to look like someone else.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_etiquette" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_etiquette" class="white-text btn-invisible">
-                                        Etiquette
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Knowing the social niceties of various cultures.
+                            <div>
+                                <input type="checkbox" name="attr_focus_deception" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_deception" class="white-text btn-invisible">
+                                            Deception
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Tricking and lying to other people.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_expression" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_expression" class="white-text btn-invisible">
-                                        Expression
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Conveying thoughts and ideas effectively through words.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_gambling" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_gambling" class="white-text btn-invisible">
-                                        Gambling
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Playing games of chance and profiting from them.
+                            <div>
+                                <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible">
+                                            Disguise
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Changing your appearance to look like someone else.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible">
-                                        Investigation
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Interviewing people for information and finding and deciphering clues.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_leadership" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_leadership" class="white-text btn-invisible">
-                                        Leadership
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Guiding, directing, and inspiring others.
+                            <div>
+                                <input type="checkbox" name="attr_focus_etiquette" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_etiquette" class="white-text btn-invisible">
+                                            Etiquette
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Knowing the social niceties of various cultures.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_performing" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_performing" class="white-text btn-invisible">
-                                        Performing
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Entertaining an audience with a type of performance art.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_persuasion" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_persuasion" class="white-text btn-invisible">
-                                        Persuasion
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Convincing others to agree with you.
+                            <div>
+                                <input type="checkbox" name="attr_focus_expression" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_expression" class="white-text btn-invisible">
+                                            Expression
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Conveying thoughts and ideas effectively through words.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_seduction" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_seduction" class="white-text btn-invisible">
-                                        Seduction
-                                    </button>
+                            <div>
+                                <input type="checkbox" name="attr_focus_gambling" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_gambling" class="white-text btn-invisible">
+                                            Gambling
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Playing games of chance and profiting from them.
+                                    </div>
                                 </div>
-                                <div class="focus help-text">
-                                    Getting attention through romantic and sexual allure.
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible">
+                                            Investigation
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Interviewing people for information and finding and deciphering clues.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_leadership" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_leadership" class="white-text btn-invisible">
+                                            Leadership
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Guiding, directing, and inspiring others.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_performing" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_performing" class="white-text btn-invisible">
+                                            Performing
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Entertaining an audience with a type of performance art.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_persuasion" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_persuasion" class="white-text btn-invisible">
+                                            Persuasion
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Convincing others to agree with you.
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_seduction" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_seduction" class="white-text btn-invisible">
+                                            Seduction
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Getting attention through romantic and sexual allure.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4342,7 +4347,7 @@
                             This ability is your overall health, fortitude, and resistance to harm, illness, and fatigue.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_running" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -4433,10 +4438,11 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
                             <div>
                                 <input type="checkbox" name="attr_focus_running" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_running" class="white-text btn-invisible">
                                             Running
@@ -4449,7 +4455,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_swimming" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_swimming" class="white-text btn-invisible">
                                             Swimming
@@ -4462,7 +4468,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_stamina" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_stamina" class="white-text btn-invisible">
                                             Stamina
@@ -4475,7 +4481,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_tolerance" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_tolerance" class="white-text btn-invisible">
                                             Tolerance
@@ -4487,6 +4493,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- Dexterity -->
                 <div class="ability margin-bottom-10">
@@ -4499,7 +4506,7 @@
                             This ability covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -4678,108 +4685,110 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_acrobatics" class="white-text btn-invisible">
-                                            Acrobatics
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Executing gymnastic, balancing, and tumbling maneuvers.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_crafting" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_crafting" class="white-text btn-invisible">
-                                            Crafting
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                            <div class="unselected-focuses">
+                                <div>
+                                    <input type="checkbox" name="attr_focus_acrobatics" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_acrobatics" class="white-text btn-invisible">
+                                                Acrobatics
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Executing gymnastic, balancing, and tumbling maneuvers.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_driving" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_driving" class="white-text btn-invisible">
-                                            Driving
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Handling surface vehicles like cars, trucks, or motorized carts, to name a few.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_freefall" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_freefall" class="white-text btn-invisible">
-                                            Free-Fall
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Maneuvering and moving while in free-fall, usually in microgravity.
+                                <div>
+                                    <input type="checkbox" name="attr_focus_crafting" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_crafting" class="white-text btn-invisible">
+                                                Crafting
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Making things with manual skills, including the various fine and plastic arts. Examples of specific Crafting focuses include Carpentry, Carving, Drawing, Glass-blowing, Leather-working, Painting, Origami, Sculpting, and so forth, but feel free to come up with your own.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_initiative" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_initiative" class="white-text btn-invisible">
-                                            Initiative
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Reacting quickly under pressure.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_piloting" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_piloting" class="white-text btn-invisible">
-                                            Piloting
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.
+                                <div>
+                                    <input type="checkbox" name="attr_focus_driving" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_driving" class="white-text btn-invisible">
+                                                Driving
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Handling surface vehicles like cars, trucks, or motorized carts, to name a few.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_sleight_of_hand" class="white-text btn-invisible">
-                                            Sleight of Hand
-                                        </button>
-                                    </div>
-                                    <div class="focus help-text">
-                                        Using sleight of hand and deft movements to trick others, hide things, or pick pockets.
+                                <div>
+                                    <input type="checkbox" name="attr_focus_freefall" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_freefall" class="white-text btn-invisible">
+                                                Free-Fall
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Maneuvering and moving while in free-fall, usually in microgravity.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
-                                    <div class="blue-bar">
-                                        <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
-                                            Stealth
-                                        </button>
+                                <div>
+                                    <input type="checkbox" name="attr_focus_initiative" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_initiative" class="white-text btn-invisible">
+                                                Initiative
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Reacting quickly under pressure.
+                                        </div>
                                     </div>
-                                    <div class="focus help-text">
-                                        Moving around without being noticed.
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="attr_focus_piloting" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_piloting" class="white-text btn-invisible">
+                                                Piloting
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Operating vehicles that move in three dimensions like aircraft, drones, and spaceships.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="attr_focus_sleight_of_hand" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_sleight_of_hand" class="white-text btn-invisible">
+                                                Sleight of Hand
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Using sleight of hand and deft movements to trick others, hide things, or pick pockets.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                                    <div class="hidden-if-checked">
+                                        <div class="blue-bar">
+                                            <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
+                                                Stealth
+                                            </button>
+                                        </div>
+                                        <div class="focus help-text">
+                                            Moving around without being noticed.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -4796,7 +4805,7 @@
                             This ability is your capability in close combat, ranging from a brawl to wielding weapons.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                         <div>
                             <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
                             <div class="hidden-if-unchecked dynamic-content">
@@ -4887,56 +4896,58 @@
                         </div>
                     </div>
                     <div class="focuses hidden-if-unchecked">
-                        <div class="unselected-items">Add Focus</div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_brawling" class="white-text btn-invisible">
-                                        Brawling
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_grappling" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_grappling" class="white-text btn-invisible">
-                                        Grappling
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency in unarmed techniques intended to immobilize and restrain.
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
+                            <div>
+                                <input type="checkbox" name="attr_focus_brawling" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_brawling" class="white-text btn-invisible">
+                                            Brawling
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency in fighting unarmed, from bare-knuckle boxing to various styles of martial arts.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_heavy_weapons" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_heavy_weapons" class="white-text btn-invisible">
-                                        Heavy Weapons
-                                    </button>
-                                </div>
-                                <div class="focus help-text">
-                                    Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.
+                            <div>
+                                <input type="checkbox" name="attr_focus_grappling" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_grappling" class="white-text btn-invisible">
+                                            Grappling
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency in unarmed techniques intended to immobilize and restrain.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="attr_focus_light_weapons" class="unhide-content invisible" value="1" />
-                            <div class="hidden-if-checked dynamic-content">
-                                <div class="blue-bar">
-                                    <button type="action" name="act_select_focus_light_weapons" class="white-text btn-invisible">
-                                        Light Weapons
-                                    </button>
+                            <div>
+                                <input type="checkbox" name="attr_focus_heavy_weapons" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_heavy_weapons" class="white-text btn-invisible">
+                                            Heavy Weapons
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with large or heavy close combat weapons like axes, clubs, hammers, and large swords, to name a few.
+                                    </div>
                                 </div>
-                                <div class="focus help-text">
-                                    Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.
+                            </div>
+                            <div>
+                                <input type="checkbox" name="attr_focus_light_weapons" class="unhide-content invisible" value="1" />
+                                <div class="hidden-if-checked">
+                                    <div class="blue-bar">
+                                        <button type="action" name="act_select_focus_light_weapons" class="white-text btn-invisible">
+                                            Light Weapons
+                                        </button>
+                                    </div>
+                                    <div class="focus help-text">
+                                        Proficiency with light close combat weapons like batons, knives, light staffs, and swords, among others.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4954,7 +4965,7 @@
                             This ability measures your reasoning, memory, problem-solving, and overall knowledge.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_art" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -5287,10 +5298,11 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
                             <div>
                                 <input type="checkbox" name="attr_focus_art" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_art" class="white-text btn-invisible">
                                             Art
@@ -5303,7 +5315,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_business" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_business" class="white-text btn-invisible">
                                             Business
@@ -5316,7 +5328,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible">
                                             Cryptography
@@ -5329,7 +5341,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_current_affairs" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_current_affairs" class="white-text btn-invisible">
                                             Current Affairs
@@ -5342,7 +5354,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_demolitions" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_demolitions" class="white-text btn-invisible">
                                             Demolitions
@@ -5355,7 +5367,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_engineering" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_engineering" class="white-text btn-invisible">
                                             Engineering
@@ -5368,7 +5380,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_evaluation" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_evaluation" class="white-text btn-invisible">
                                             Evaluation
@@ -5381,7 +5393,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_law" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_law" class="white-text btn-invisible">
                                             Law
@@ -5394,7 +5406,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_medicine" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_medicine" class="white-text btn-invisible">
                                             Medicine
@@ -5407,7 +5419,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_navigation" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_navigation" class="white-text btn-invisible">
                                             Navigation
@@ -5420,7 +5432,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_research" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_research" class="white-text btn-invisible">
                                             Research
@@ -5433,7 +5445,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_science" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_science" class="white-text btn-invisible">
                                             Science
@@ -5446,7 +5458,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_security" class="white-text btn-invisible">
                                             Security
@@ -5459,7 +5471,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_tactics" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_tactics" class="white-text btn-invisible">
                                             Tactics
@@ -5472,7 +5484,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_technology" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_technology" class="white-text btn-invisible">
                                             Technology
@@ -5484,6 +5496,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- Perception -->
                 <div class="ability margin-bottom-10">
@@ -5497,7 +5510,7 @@
                             This ability is your capacity to pick up on and notice things using any of his senses.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_empathy" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -5720,10 +5733,11 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
                             <div>
                                 <input type="checkbox" name="attr_focus_empathy" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_empathy" class="white-text btn-invisible">
                                             Empathy
@@ -5736,7 +5750,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_hearing" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_hearing" class="white-text btn-invisible">
                                             Hearing
@@ -5749,7 +5763,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_intuition" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_intuition" class="white-text btn-invisible">
                                             Intuition
@@ -5762,7 +5776,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_searching" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_searching" class="white-text btn-invisible">
                                             Searching
@@ -5775,7 +5789,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_seeing" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_seeing" class="white-text btn-invisible">
                                             Seeing
@@ -5788,7 +5802,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_smelling" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_smelling" class="white-text btn-invisible">
                                             Smelling
@@ -5801,7 +5815,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_survival" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_survival" class="white-text btn-invisible">
                                             Survival
@@ -5814,7 +5828,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_tasting" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_tasting" class="white-text btn-invisible">
                                             Tasting
@@ -5827,7 +5841,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_touching" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_touching" class="white-text btn-invisible">
                                             Touching
@@ -5840,7 +5854,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_tracking" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_tracking" class="white-text btn-invisible">
                                             Tracking
@@ -5852,6 +5866,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- Strength -->
                 <div class="ability margin-bottom-10">
@@ -5864,7 +5879,7 @@
                             This ability rates your sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_climbing" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -5955,10 +5970,11 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
                             <div>
                                 <input type="checkbox" name="attr_focus_climbing" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_climbing" class="white-text btn-invisible">
                                             Climbing
@@ -5971,7 +5987,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_intimidation" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_intimidation" class="white-text btn-invisible">
                                             Intimidation
@@ -5984,7 +6000,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_jumping" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_jumping" class="white-text btn-invisible">
                                             Jumping
@@ -5997,7 +6013,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_might" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_might" class="white-text btn-invisible">
                                             Might
@@ -6009,6 +6025,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- Willpower -->
                 <div class="ability margin-bottom-10">
@@ -6021,7 +6038,7 @@
                             This ability measures your self-control, self-discipline, mental fortitude, and confidence.
                         </div>
                     </div>
-                    <div class="focuses">
+                    <div class="focuses margin-bottom-10">
                             <div>
                                 <input type="checkbox" name="attr_focus_courage" class="unhide-content invisible" value="1" />
                                 <div class="hidden-if-unchecked dynamic-content">
@@ -6090,10 +6107,11 @@
                             </div>
                         </div>
                     <div class="focuses hidden-if-unchecked">
-                            <div class="unselected-items">Add Focus</div>
+                        <div class="unselected-items margin-bottom-10">Add Focus</div>
+                        <div class="unselected-focuses">
                             <div>
                                 <input type="checkbox" name="attr_focus_courage" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_courage" class="white-text btn-invisible">
                                             Courage
@@ -6106,7 +6124,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_faith" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_faith" class="white-text btn-invisible">
                                             Faith
@@ -6119,7 +6137,7 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="attr_focus_self_discipline" class="unhide-content invisible" value="1" />
-                                <div class="hidden-if-checked dynamic-content">
+                                <div class="hidden-if-checked">
                                     <div class="blue-bar">
                                         <button type="action" name="act_select_focus_self_discipline" class="white-text btn-invisible">
                                             Self-Discipline
@@ -6131,6 +6149,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
