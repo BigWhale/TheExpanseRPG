@@ -3,12 +3,12 @@
 .charsheet {
 	background-color: #eee;
 	min-width: 800px;
-	font-family: "Ubuntu";
+	font-family: "Ubuntu", sans-serif;
 }
 
 /* Universal styling applied to all elements of these types */
 p {
-	font-family: "Ubuntu";
+	font-family: "Ubuntu", sans-serif;
 	text-align: left;
     padding-left: 5px;
     padding-right: 5px;
@@ -99,12 +99,12 @@ input[type=checkbox].sheet-styled-sibling:hover + span {
     color: #e7471a;
 }
 
-input[type=checkbox].sheet-styled-sibling-floated + span,
-input[type=checkbox].sheet-styled-sibling + span{
-    font-size: 1.2em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+/*input[type=checkbox].sheet-styled-sibling-floated + span,*/
+/*input[type=checkbox].sheet-styled-sibling + span{*/
+/*    font-size: 1.2em;*/
+/*    font-weight: bold;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
 input[type=checkbox].sheet-styled-sibling-floated + span {
     padding-right: 10px;
@@ -472,35 +472,6 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     position: absolute;
 }
 
-.charsheet input[type=checkbox].sheet-styled-show-more {
-    z-index: 20;
-    opacity: 0;
-    width: 100%;
-    height: 40px;
-    top: 0;
-    left: 0;
-}
-
-.sheet-check-label {
-    z-index: 10;
-    top: 0;
-    left: 0;
-    font-size: 1.8rem;
-    font-weight: bold;
-    padding-left: 5px;
-}
-
-.sheet-check-label::after {
-    padding-left: 5px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    content: "▾";
-}
-
-.charsheet input[type=checkbox].sheet-styled-show-more:checked ~.sheet-check-label::after {
-    content: "▴";
-}
-
 .sheet-position-relative {
     position: relative;
 }
@@ -547,7 +518,7 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
     content: "(click to close)";
 }
 
-.sheet-section-wrapper-toggle input[type=checkbox] {
+.sheet-section-wrapper-toggle > input[type=checkbox] {
     position: absolute;
     top: 0;
     right: 0;
@@ -557,6 +528,7 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
     height: 36px;
     opacity: 0;
 }
+
 
 input[type=checkbox].sheet-section-title-unhide:not(:checked) ~ .sheet-hidden-if-unchecked,
 input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-checked {
@@ -700,6 +672,73 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
 .sheet-status-wrapper .sheet-status-item {
 
 }
+
+/* Talents */
+
+.sheet-talents-unselected input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 100;
+
+}
+
+.sheet-styled-show-more::after {
+    padding-left: 10px;
+    font-size: .8em;
+    font-weight: bold;
+    content: "(click to open)";
+}
+
+input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
+    transition: color ease-in-out .2s;
+    color: #e7471a;
+}
+
+.charsheet input[type=checkbox].sheet-section-title-unhide:checked ~ h1::after {
+    content: "(click to close)";
+}
+
+.sheet-show-more-label {
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+/* Show more toggles */
+.sheet-show-more-check {
+    z-index: 20;
+    opacity: 0;
+    width: 100%;
+    height: 25px !important;
+    top: 0;
+    left: 0;
+}
+
+.sheet-show-more-label::after {
+    padding-left: 5px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    content: "▾";
+}
+
+.sheet-show-more-check:checked ~ .sheet-show-more-label::after {
+    content: "▴";
+}
+
+.sheet-show-more-check:hover ~ .sheet-show-more-label {
+    color: #e7471a;
+}
+
 
 /* Abilities */
 
