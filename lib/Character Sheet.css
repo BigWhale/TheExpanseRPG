@@ -814,3 +814,10 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
     top: 0;
     right: 0;
 }
+.sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked > .sheet-dynamic-subsection {
+    margin-bottom: 8px;
+}
+
+.sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked > .sheet-dynamic-subsection > .sheet-hidden-if-unchecked label {
+    padding: 5px;
+}
