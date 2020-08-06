@@ -860,3 +860,7 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
 .sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked > .sheet-dynamic-subsection > .sheet-hidden-if-unchecked label {
     padding: 5px;
 }
+
+.sheet-text-field-size input[type=text] {
+    width: 90%;
+}
