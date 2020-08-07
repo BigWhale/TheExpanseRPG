@@ -1,14 +1,45 @@
 # TheExpanseRPG
-In order to use this custom character sheets you must have a PRO account with Roll20. You will need access to custom Charater Sheets as well as Custom API's.
+In order to use this custom character sheets you must have a PRO account
+with Roll20. You will need access to custom Character Sheets as well as
+Custom API's.
 
-# Notes
-1) Rolls happen automatically when you select the Focus or Attribute you're rolling against and will be displayed in the chat window
-1) Any focus bonuses (and improved focuses at level 11 and beyond) are automatically added into their Focus rolls
-1) Talents and Specializations have all their info copied from the Game Manual PDF and restrictions on which you can select are built in. E.g. the Burglary Talent requires Dexterity 2 or higher, so if you don't have Dexterity >= 2 you cannot select Burglary as a Talent.
-1) Any time a talent or specialization rank increase permanently modifies a Focus' bonus, that bonus is automatically calculated into their respective rolls. E.g. The Hacker Specialization's Novice rank gives a +1 to ALL Intelligence(Technology) tests, so that bonus will already be applied.
-1) If the Focus' bonus is only applied in some scenarios then you must make sure you add it manually when prompted for Additional Modifiers during the roll. E.g. The Command Talent's Expert rank gives all NPC allies a +1 bonus to their initiative rolls which must be applied manually.
-1) I tried to explicitly point out any time a bonus is automatically applied, but if you're not sure, try the roll both with and without the Talent, Specialization, or applied rank to see if the `Modifiers` number changes in the roll. Sorry if I missed some :/.
-1) It's extremely likely I made some typo's, mistakes, or mis-copied some data. I found a couple just writing this README. If you encounter an issue feel free to try to fix it on your own or submit a Pull Request to have it fixed in this repo. If it's more serious than that or you don't know how to do those things submit an issue and I'll try and address it as soon as I can.
+# Basic usage
+Create a character and enter Bio & Info as desired, then switch to character
+sheet and set your name and level. Fill out the rest of the required data for
+your character and set the abilities and base income. Then proceed with adding
+talents and specialisations, later in the game.
+
+- All abilities have a `die roll` button on the left, with focuses having
+a dedicated button. All rolls are automatic and are shown in the chat window.
+
+- Any focus bonuses (and improved focuses at level 11 and beyond) are
+automatically added into their Focus rolls
+
+- Talents and Specializations have all their info copied from the Game Manual
+PDF and restrictions on which you can select are built in. E.g. the Burglary
+Talent requires Dexterity 2 or higher, so if you don't have Dexterity >= 2 you
+cannot select Burglary as a Talent.
+
+- Anytime a talent or specialization rank increases permanently modifies a
+Focus' bonus, bonus is then automatically calculated into their respective
+rolls. E.g. The Hacker Specialization's Novice rank gives a +1 to ALL
+Intelligence(Technology) tests, so that bonus will already be applied.
+
+- If the Focus' bonus is only applied in some scenarios then you must make
+sure you add it manually when prompted for Additional Modifiers during the
+roll. E.g. The Command Talent's Expert rank gives all NPC allies a +1 bonus
+to their initiative rolls which must be applied manually.
+
+- I tried to explicitly point out any time a bonus is automatically applied,
+but if you're not sure, try the roll both with and without the Talent,
+Specialization, or applied rank to see if the `Modifiers` number changes
+in the roll. Sorry if I missed some :/.
+
+- It's extremely likely I made some typos, mistakes, or mis-copied some
+data. I found a couple just writing this README. If you encounter an issue
+feel free to try to fix it on your own or submit a Pull Request to have it
+fixed in this repo. If it's more serious than that or you don't know how to
+do those things submit an issue and I'll try and address it as soon as I can.
 
 # Installation
 ## Installing the character sheet
@@ -19,9 +50,8 @@ In order to use this custom character sheets you must have a PRO account with Ro
 1) Copy the code from `lib/Character Sheet.css` in this project to the CSS Styling tab on your Roll20 campaign's settings page
 1) Press `Save` at the bottom of the page before moving on.
 
-## Installing PowerCards and TheExpanseAPI
+## Installing TheExpanseAPI
 1) From your campaign's main page go to Settings >  API Scripts
-1) Under the `Script Library` tab, select PowerCards in the dropdown. (Typing in "PowerCards" in the dropdown filter should find it fairly easily). Add it.
 1) Select `New Script`
 1) Copy the code from `lib/TheExpanseAPI.js` into the code window shown
 1) (optional) Rename the file from untitled.js to TheExpanseAPI.js
@@ -30,7 +60,7 @@ In order to use this custom character sheets you must have a PRO account with Ro
 Once all of the above steps are completed you're done! You should be able to create a new character in your Launched game.
 
 # TODO
-1) Beautify talents and specializations
-2) Take care of HTML/CSS of the rest of the sheet
-3) Possibly convert multiple buttons into dropdowns
+1) Beautify specializations
+1) Possibly convert multiple buttons into dropdowns
+1) 
  
