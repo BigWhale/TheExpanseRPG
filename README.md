@@ -57,10 +57,8 @@ do those things submit an issue and I'll try and address it as soon as I can.
 1) (optional) Rename the file from untitled.js to TheExpanseAPI.js
 1) Press `Save Script` and ensure that the console window at the bottom starts talking about restarting the sandbox and spinning up a new one
 
-Once all of the above steps are completed you're done! You should be able to create a new character in your Launched game.
+Once all the above steps are completed you're done! You should be able to create a new character in your Launched game.
 
 # TODO
-1) Beautify specializations
-1) Possibly convert multiple buttons into dropdowns
-1) 
+1) Fix talents and specialization that have additional options
  
