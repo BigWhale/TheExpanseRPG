@@ -387,14 +387,6 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin: auto;
 }
 
-.sheet-talents,
-.sheet-focuses {
-    background-color: #eee;
-    overflow: auto;
-    overflow-y: hidden;
-    width: 100%;
-}
-
 .sheet-invisible {
     display: none;
 }
@@ -675,7 +667,17 @@ input[type=checkbox].sheet-attack-toggle-unhide:checked + .sheet-hidden-if-check
 
 /* Talents */
 
-.sheet-talents-unselected input[type=checkbox] {
+.sheet-talents,
+.sheet-specializations,
+.sheet-focuses {
+    background-color: #eee;
+    overflow: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.sheet-talents-unselected input[type=checkbox],
+.sheet-specializations-unselected input[type=checkbox] {
     opacity: 0;
     position: absolute;
     right: 0;
@@ -741,10 +743,6 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
 
 
 /* Abilities */
-
-.sheet-section-abilities {
-
-}
 
 .sheet-ability {
     display: flex;
