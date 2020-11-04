@@ -92,19 +92,15 @@ input[type=checkbox].sheet-styled-sibling-floated {
     z-index: 1;
 }
 
-input[type=checkbox].sheet-styled-sibling-floated:checked + span,
 input[type=checkbox].sheet-styled-sibling-floated:hover + span,
-input[type=checkbox].sheet-styled-sibling:checked + span,
 input[type=checkbox].sheet-styled-sibling:hover + span {
-    color: #e7471a;
+    color: #f5ac86;
 }
 
-/*input[type=checkbox].sheet-styled-sibling-floated + span,*/
-/*input[type=checkbox].sheet-styled-sibling + span{*/
-/*    font-size: 1.2em;*/
-/*    font-weight: bold;*/
-/*    text-transform: uppercase;*/
-/*}*/
+input[type=checkbox].sheet-styled-sibling-floated:checked + span,
+input[type=checkbox].sheet-styled-sibling:checked + span {
+    color: #e7471a;
+}
 
 input[type=checkbox].sheet-styled-sibling-floated + span {
     padding-right: 10px;
@@ -119,23 +115,46 @@ input[type=checkbox].sheet-styled-toggle {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 32px;
     cursor: pointer;
     z-index: 1;
 }
 
-input[type=checkbox].sheet-styled-toggle:checked + span,
+input[type=checkbox].sheet-styled-toggle-small {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input[type=checkbox].sheet-styled-toggle-small:hover +span,
 input[type=checkbox].sheet-styled-toggle:hover + span {
+    color: #f5ac86;
+}
+
+input[type=checkbox].sheet-styled-toggle-small:checked + span,
+input[type=checkbox].sheet-styled-toggle:checked + span {
     color: #e7471a;
 }
 
+input[type=checkbox].sheet-styled-toggle-small + span,
 input[type=checkbox].sheet-styled-toggle + span {
     font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* Targetted styling that only effects elements contained within the stated class */
+/* Targeted styling that only effects elements contained within the stated class */
+.sheet-cursor-default {
+    cursor: default;
+}
+
 .sheet-stats h3 {
 	display: inline-block;
 	text-align: left;
@@ -164,104 +183,16 @@ input[type=checkbox].sheet-styled-toggle + span {
     transform: translate(5%, 25%);
 }
 
+.sheet-white-text-notran {
+    color: white;
+}
+
 .sheet-help-text {
     padding-left: 5px;
     padding-right: 5px;
     text-align: left;
     color: gray;
     background-color: #eee;
-}
-
-.sheet-margin-5 {
-    margin: 5px;
-}
-
-.sheet-margin-top-5 {
-    margin-top: 5px;
-}
-
-.sheet-margin-top-10 {
-    margin-top: 10px;
-}
-
-.sheet-margin-top-20 {
-    margin-top: 20px;
-}
-
-.sheet-margin-bottom-5 {
-    margin-bottom: 5px;
-}
-
-.sheet-margin-bottom-10 {
-    margin-bottom: 10px;
-}
-
-.sheet-margin-bottom-20 {
-    margin-bottom: 20px;
-}
-
-.sheet-margin-right-10 {
-    margin-right: 10px;
-}
-
-.sheet-margin-right--10 {
-    margin-right: -10px;
-}
-
-.sheet-padding-5 {
-    padding: 5px !important;
-}
-
-.sheet-padding-10 {
-    padding: 10px !important;
-}
-
-.sheet-padding-bottom-5 {
-    padding-bottom: 5px;
-}
-
-.sheet-padding-bottom-10 {
-    padding-bottom: 10px;
-}
-
-.sheet-padding-bottom-20 {
-    padding-bottom: 20px;
-}
-
-.sheet-padding-top-5 {
-    padding-top: 5px;
-}
-
-.sheet-padding-top-10 {
-    padding-top: 10px;
-}
-
-.sheet-padding-top-20 {
-    padding-top: 20px;
-}
-
-.sheet-padding-top-30 {
-    padding-top: 30px;
-}
-
-.sheet-padding-y-5 {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-}
-
-.sheet-padding-y-10 {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-.sheet-padding-x-5 {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-}
-
-.sheet-padding-x-10 {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
 }
 
 .sheet-float-right {
@@ -381,10 +312,57 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin: auto;
 }
 
-.sheet-dynamic-subsection-talents {
+.sheet-dynamic-subsection-talents,
+.sheet-dynamic-subsection-specializations {
     display: flex;
     justify-content: space-around;
     margin: auto;
+}
+
+.sheet-dynamic-subsection-specializations-wide {
+    display: flex;
+    justify-content: space-around;
+    margin: auto 5px;
+    flex-direction: column;
+}
+
+.sheet-spec-bonuses {
+    margin-left: 10px;
+}
+
+.sheet-spec-bonuses label {
+    font-size: 1.3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.sheet-spec-bonuses input {
+    font-size: 1.3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.sheet-spec-bonuses input:hover ~ .sheet-bonus-bar-label {
+    color: #f5ac86;
+}
+
+.sheet-spec-bonuses input:checked ~ .sheet-bonus-bar-label {
+    color: #e7471a;
+}
+
+.sheet-spec-bonuses input:checked ~ .sheet-bonus-bar-label::after {
+    content: " ✓";
+}
+
+
+.sheet-spec-bonus {
+    min-height: 24px;
 }
 
 .sheet-invisible {
@@ -401,7 +379,7 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
 .sheet-dynamic-content {
     background: #dbeaee;
     float: left;
-    margin: 5px;
+    margin: 5px 4px 5px 4px;
 }
 
 .sheet-dynamic-content-small {
@@ -416,6 +394,11 @@ input[type=checkbox]:checked + label.sheet-checked-glow,
     margin: auto;
     text-align: center;
 }
+
+.sheet-left {
+    text-align: left;
+}
+
 
 .sheet-aliceblue-bg {
     position: relative;
@@ -517,10 +500,9 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 36px;
+    height: 42px;
     opacity: 0;
 }
-
 
 input[type=checkbox].sheet-section-title-unhide:not(:checked) ~ .sheet-hidden-if-unchecked,
 input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-checked {
@@ -539,6 +521,7 @@ input[type=checkbox].sheet-section-title-unhide:checked + .sheet-hidden-if-check
 .sheet-attack-container .sheet-weapon-single {
     order: 1;
 }
+
 .charsheet .repcontainer.editmode .repitem .itemcontrol {
     display: flex;
     justify-content: flex-end;
@@ -741,6 +724,52 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
     color: #e7471a;
 }
 
+.sheet-show-more-specializations {
+    color: #fff;
+    padding: 3px 0;
+    font-size: 1em;
+}
+
+.sheet-bonus-bar input[type=checkbox] {
+    z-index: 20;
+    height: 25px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%
+}
+
+.sheet-bonus-bar label {
+    z-index: 10;
+    height: 25px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.sheet-bonus-bar-check:hover ~ .sheet-bonus-bar-label,
+.sheet-bonus-bar-check:hover ~ .sheet-bonus-bar-label::after {
+    color: #f5ac86;
+}
+
+.sheet-bonus-bar-check ~ .sheet-bonus-bar-label::after {
+    font-size: 1.4rem;
+    content: "Apply bonus?";
+}
+
+.sheet-bonus-bar-check:checked ~ .sheet-bonus-bar-label::after {
+    font-size: 1.4rem;
+    content: "Bonus applied ✓";
+    color: #e7471a;
+}
+
+.sheet-bonus-bar-check:checked ~ .sheet-bonus-bar-label {
+    color: #e7471a;
+}
+
 
 /* Abilities */
 
@@ -851,6 +880,7 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
     top: 0;
     right: 0;
 }
+
 .sheet-ability .sheet-selected-focuses > div > .sheet-hidden-if-unchecked > .sheet-dynamic-subsection {
     margin-bottom: 8px;
 }
@@ -861,4 +891,109 @@ input[type=checkbox].sheet-section-title-unhide:hover ~ h1 {
 
 .sheet-text-field-size input[type=text] {
     width: 90%;
+}
+
+/* Padding and margin overrides */
+.sheet-height-20 {
+    min-height: 20px;
+}
+
+.sheet-height-30 {
+    min-height: 30px;
+}
+
+.sheet-height-40 {
+    min-height: 40px;
+}
+
+.sheet-margin-5 {
+    margin: 5px;
+}
+
+.sheet-margin-top-5 {
+    margin-top: 5px;
+}
+
+.sheet-margin-top-10 {
+    margin-top: 10px;
+}
+
+.sheet-margin-top-20 {
+    margin-top: 20px;
+}
+
+.sheet-margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.sheet-margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.sheet-margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.sheet-margin-right-10 {
+    margin-right: 10px;
+}
+
+.sheet-margin-right--10 {
+    margin-right: -10px;
+}
+
+.sheet-padding-5 {
+    padding: 5px !important;
+}
+
+.sheet-padding-10 {
+    padding: 10px !important;
+}
+
+.sheet-padding-bottom-5 {
+    padding-bottom: 5px;
+}
+
+.sheet-padding-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.sheet-padding-bottom-20 {
+    padding-bottom: 20px;
+}
+
+.sheet-padding-top-5 {
+    padding-top: 5px;
+}
+
+.sheet-padding-top-10 {
+    padding-top: 10px;
+}
+
+.sheet-padding-top-20 {
+    padding-top: 20px;
+}
+
+.sheet-padding-top-30 {
+    padding-top: 30px;
+}
+
+.sheet-padding-y-5 {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.sheet-padding-y-10 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.sheet-padding-x-5 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.sheet-padding-x-10 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }

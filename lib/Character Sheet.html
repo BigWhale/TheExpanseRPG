@@ -996,8 +996,8 @@
                                     <input type="checkbox" name="attr_talent_knowledge_expert" class="styled-toggle" value="1" />
                                     <span class="prof-button-text">EXP</span>
                                 </span>
-                                <div>
-                                    <input type="checkbox" name="attr_talent_knowledge_master" class="styled-sibling unhide-content" value="1" />
+                                <span class="prof-button sheet-position-relative">
+                                    <input type="checkbox" name="attr_talent_knowledge_master" class="styled-toggle unhide-content" value="1" />
                                     <span class="prof-button-text">MAS</span>
                                     <div class="hidden-if-unchecked">
                                         <p>Chosen Focuses:</p>
@@ -1038,7 +1038,7 @@
                                             <option value="technology">INT (Technology)</option>
                                         </select>
                                     </div>
-                                </div>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -2856,7 +2856,7 @@
                             </div>
                             <div class="justify">
                                 <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Research) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_academic_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -2894,19 +2894,21 @@
                             <div class="justify">
                                 <p>Few can fly like you do.</p>
                                 <p><strong>Requirements: </strong> Dexterity 3 or higher and the Dexterity (Piloting) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_ace_novice" class="styled-toggle" value="1" checked/>
-                                        <span class="prof-button-text">NOV</span>
+                                        <span class="prof-button-text">NOVICE</span>
                                     </span>
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_ace_expert" class="styled-toggle" value="1" />
-                                        <span class="prof-button-text">EXP</span>
+                                        <span class="prof-button-text">EXPERT</span>
                                     </span>
+                                </div>
+                                <div class="dynamic-subsection-specializations-wide justify margin-top-5">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="number" disabled=true class="invisible" name="attr_focus_piloting_mod_1" value="@{spec_ace_master}" />
                                         <input type="checkbox" name="attr_spec_ace_master" class="styled-toggle unhide-content" value="1" />
-                                        <span class="prof-button-text">MAS</span>
+                                        <span class="prof-button-text">MASTER</span>
                                         <div class="hidden-if-unchecked">
                                             (Bonus automatically applied to roll. You MUST subtract it manually on a re-roll.)
                                         </div>
@@ -2936,147 +2938,170 @@
                             <div class="justify">
                                 <p>You’re a skilled spy and infiltrator.</p>
                                 <p><strong>Requirements: </strong> Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_agent_novice" class="styled-toggle" value="1" checked/>
-                                        <span class="prof-button-text">NOV</span>
+                                        <span class="prof-button-text">NOVICE</span>
                                     </span>
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_agent_expert" class="styled-toggle" value="1" />
-                                        <span class="prof-button-text">EXP</span>
+                                        <span class="prof-button-text">EXPERT</span>
                                     </span>
+                                </div>
+                                <div class="dynamic-subsection-specializations-wide margin-top-5">
                                     <span class="prof-button sheet-position-relative">
-                                        <input type="checkbox" name="attr_spec_agent_master" class="styled-toggle unhide-content" value="1" />
-                                        <span class="prof-button-text">MAS</span>
-                                            <!-- hereiam -->
-                                        <div class="hidden-if-unchecked">
-                                            <div>Select 2 Focuses. If you already have all of them, then select up to 2 to give a +1 bonus to. (Bonus will automatically apply to rolls)</div>
-                                            <div>
-                                                <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
-                                                <div class="hidden-if-unchecked subsection">
-                                                    <div class="blue-bar">
-                                                        <label class="white-text">Disguise</label>
-                                                        <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible float-right">X</button>
-                                                    </div>
-                                                    <input type="checkbox" name="attr_spec_agent_disguise_bonus" class="styled-sibling" value="1" />
-                                                    <span>&plusmn; Bonus</span>
-                                                    <input type="number" disabled="true" class="invisible" name="attr_focus_disguise_mod_1" value="@{spec_agent}*@{spec_agent_disguise_bonus}" />
-                                                </div>
+                                        <input type="checkbox" name="attr_spec_agent_master" class="styled-toggle-small unhide-content" value="1" />
+                                        <span class="prof-button-text">MASTER</span>
+                                        <div class="spec-bonus hidden-if-unchecked cursor-default padding-bottom-20">
+                                            <div class="margin-bottom-10">
+                                                Select 2 Focuses. If you already have all of them, then select up to 2 to give a +1 bonus to. (Bonus will automatically apply to rolls)
                                             </div>
-                                            <div>
-                                                <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
-                                                <div class="hidden-if-unchecked subsection">
-                                                    <div class="blue-bar">
-                                                        <label class="white-text">Invest.</label>
-                                                        <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible float-right">X</button>
-                                                    </div>
-                                                    <input type="checkbox" name="attr_spec_agent_investigation_bonus" class="styled-sibling" value="1" />
-                                                    <span>&plusmn; Bonus</span>
-                                                    <input type="number" disabled="true" class="invisible" name="attr_focus_investigation_mod_1" value="@{spec_agent}*@{spec_agent_investigation_bonus}" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
-                                                <div class="hidden-if-unchecked subsection">
-                                                    <div class="blue-bar">
-                                                        <label class="white-text">Stealth</label>
-                                                        <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible float-right">X</button>
-                                                    </div>
-                                                    <input type="checkbox" name="attr_spec_agent_stealth_bonus" class="styled-sibling" value="1" />
-                                                    <span>&plusmn; Bonus</span>
-                                                    <input type="number" disabled="true" class="invisible" name="attr_focus_stealth_mod_1" value="@{spec_agent}*@{spec_agent_stealth_bonus}" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
-                                                <div class="hidden-if-unchecked subsection">
-                                                    <div class="blue-bar">
-                                                        <label class="white-text">Crypto.</label>
-                                                        <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible float-right">X</button>
-                                                    </div>
-                                                    <input type="checkbox" name="attr_spec_agent_cryptography_bonus" class="styled-sibling" value="1" />
-                                                    <span>&plusmn; Bonus</span>
-                                                    <input type="number" disabled="true" class="invisible" name="attr_focus_cryptography_mod_1" value="@{spec_agent}*@{spec_agent_cryptography_bonus}" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
-                                                <div class="hidden-if-unchecked subsection">
-                                                    <div class="blue-bar">
-                                                        <label class="white-text">Security</label>
-                                                        <button type="action" name="act_select_focus_security" class="white-text btn-invisible float-right">X</button>
-                                                    </div>
-                                                    <input type="checkbox" name="attr_spec_agent_security_bonus" class="styled-sibling" value="1" />
-                                                    <span>&plusmn; Bonus</span>
-                                                    <input type="number" disabled="true" class="invisible" name="attr_focus_security_mod_1" value="@{spec_agent}*@{spec_agent_security_bonus}" />
-                                                </div>
-                                            </div>
-
-                                            <input type="checkbox" class="styled-sibling unhide-content" value="1" />
-                                            <span class="blue-bar white-text improve-label">&plusmn; Unselected</span>
-                                            <div class="hidden-if-unchecked">
+                                            <!-- Selected Focuses -->
+                                            <div class="margin-bottom-10">
+                                                <!-- Disguise -->
                                                 <div>
                                                     <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
-                                                    <div class="hidden-if-checked subsection">
+                                                    <div class="hidden-if-unchecked subsection">
                                                         <div class="blue-bar">
-                                                            <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible">
-                                                                Disguise
-                                                            </button>
+                                                            <label class="white-text">Disguise</label>
+                                                            <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible float-right">X</button>
                                                         </div>
-                                                        <div class="focus help-text">
-                                                            Changing your appearance to look like someone else.
+                                                        <div class="bonus-bar height-30 position-relative">
+                                                            <input type="checkbox" name="attr_spec_agent_disguise_bonus" class="bonus-bar-check position-absolute" value="1" />
+                                                            <label class="bonus-bar-label position-absolute"></label>
+                                                            <input type="number" disabled="true" class="invisible" name="attr_focus_disguise_mod_1" value="@{spec_agent}*@{spec_agent_disguise_bonus}" />
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- Investigation -->
                                                 <div>
                                                     <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
-                                                    <div class="hidden-if-checked subsection">
+                                                    <div class="hidden-if-unchecked subsection">
                                                         <div class="blue-bar">
-                                                            <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible">
-                                                                Invest.
-                                                            </button>
+                                                            <label class="white-text">Invest.</label>
+                                                            <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible float-right">X</button>
                                                         </div>
-                                                        <div class="focus help-text">
-                                                            Interviewing people for information and finding and deciphering clues.
+                                                        <div class="bonus-bar height-30 position-relative">
+                                                            <input type="checkbox" name="attr_spec_agent_investigation_bonus" class="bonus-bar-check position-absolute" value="1" />
+                                                            <label class="bonus-bar-label position-absolute"></label>
+                                                             <input type="number" disabled="true" class="invisible" name="attr_focus_investigation_mod_1" value="@{spec_agent}*@{spec_agent_investigation_bonus}" />
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- Stealth -->
                                                 <div>
                                                     <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
-                                                    <div class="hidden-if-checked subsection">
+                                                    <div class="hidden-if-unchecked subsection">
                                                         <div class="blue-bar">
-                                                            <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
-                                                                Stealth
-                                                            </button>
+                                                            <label class="white-text">Stealth</label>
+                                                            <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible float-right">X</button>
                                                         </div>
-                                                        <div class="focus help-text">
-                                                            Moving around without being noticed.
+                                                        <div class="bonus-bar height-30 position-relative">
+                                                            <input type="checkbox" name="attr_spec_agent_stealth_bonus" class="bonus-bar-check position-absolute" value="1" />
+                                                            <label class="bonus-bar-label position-absolute"></label>
+                                                            <input type="number" disabled="true" class="invisible" name="attr_focus_stealth_mod_1" value="@{spec_agent}*@{spec_agent_stealth_bonus}" />
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- Cryptography -->
                                                 <div>
                                                     <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
-                                                    <div class="hidden-if-checked subsection">
+                                                    <div class="hidden-if-unchecked subsection">
                                                         <div class="blue-bar">
-                                                            <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible">
-                                                                Crypto.
-                                                            </button>
+                                                            <label class="white-text">Crypto.</label>
+                                                            <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible float-right">X</button>
                                                         </div>
-                                                        <div class="focus help-text">
-                                                            Creating and deciphering codes and ciphers.
+                                                        <div class="bonus-bar height-30 position-relative">
+                                                            <input type="checkbox" name="attr_spec_agent_cryptography_bonus" class="bonus-bar-check position-absolute" value="1" />
+                                                            <label class="bonus-bar-label position-absolute"></label>
+                                                            <input type="number" disabled="true" class="invisible" name="attr_focus_cryptography_mod_1" value="@{spec_agent}*@{spec_agent_cryptography_bonus}" />
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- Security -->
                                                 <div>
                                                     <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
-                                                    <div class="hidden-if-checked subsection">
+                                                    <div class="hidden-if-unchecked subsection">
                                                         <div class="blue-bar">
-                                                            <button type="action" name="act_select_focus_security" class="white-text btn-invisible">
-                                                                Security
-                                                            </button>
+                                                            <label class="white-text">Security</label>
+                                                            <button type="action" name="act_select_focus_security" class="white-text btn-invisible float-right">X</button>
                                                         </div>
-                                                        <div class="focus help-text">
-                                                            Knowledge of different security devices, systems, protocols, and personnel.
+                                                        <div class="bonus-bar height-30 position-relative">
+                                                            <input type="checkbox" name="attr_spec_agent_security_bonus" class="bonus-bar-check position-absolute" value="1" />
+                                                            <label class="bonus-bar-label position-absolute"></label>
+                                                            <input type="number" disabled="true" class="invisible" name="attr_focus_security_mod_1" value="@{spec_agent}*@{spec_agent_security_bonus}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Unselected Focuses -->
+                                            <div class="position-relative padding-bottom-5">
+                                                <input type="checkbox" class="show-more-check styled-sibling unhide-content position-absolute" value="1" />
+                                                <label class="show-more-label show-more-specializations blue-bar position-absolute">Show More</label>
+                                                <div class="hidden-if-unchecked padding-top-30">
+                                                    <div>
+                                                        <input type="checkbox" name="attr_focus_disguise" class="unhide-content invisible" value="1" />
+                                                        <div class="hidden-if-checked subsection">
+                                                            <div class="blue-bar">
+                                                                <button type="action" name="act_select_focus_disguise" class="white-text btn-invisible">
+                                                                    Disguise
+                                                                </button>
+                                                            </div>
+                                                            <div class="focus help-text">
+                                                                Changing your appearance to look like someone else.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" name="attr_focus_investigation" class="unhide-content invisible" value="1" />
+                                                        <div class="hidden-if-checked subsection">
+                                                            <div class="blue-bar">
+                                                                <button type="action" name="act_select_focus_investigation" class="white-text btn-invisible">
+                                                                    Invest.
+                                                                </button>
+                                                            </div>
+                                                            <div class="focus help-text">
+                                                                Interviewing people for information and finding and deciphering clues.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" name="attr_focus_stealth" class="unhide-content invisible" value="1" />
+                                                        <div class="hidden-if-checked subsection">
+                                                            <div class="blue-bar">
+                                                                <button type="action" name="act_select_focus_stealth" class="white-text btn-invisible">
+                                                                    Stealth
+                                                                </button>
+                                                            </div>
+                                                            <div class="focus help-text">
+                                                                Moving around without being noticed.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" name="attr_focus_cryptography" class="unhide-content invisible" value="1" />
+                                                        <div class="hidden-if-checked subsection">
+                                                            <div class="blue-bar">
+                                                                <button type="action" name="act_select_focus_cryptography" class="white-text btn-invisible">
+                                                                    Crypto.
+                                                                </button>
+                                                            </div>
+                                                            <div class="focus help-text">
+                                                                Creating and deciphering codes and ciphers.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" name="attr_focus_security" class="unhide-content invisible" value="1" />
+                                                        <div class="hidden-if-checked subsection">
+                                                            <div class="blue-bar">
+                                                                <button type="action" name="act_select_focus_security" class="white-text btn-invisible">
+                                                                    Security
+                                                                </button>
+                                                            </div>
+                                                            <div class="focus help-text">
+                                                                Knowledge of different security devices, systems, protocols, and personnel.
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3108,7 +3133,7 @@
                             <div class="justify">
                                 <p>You are trained to fight, and to win, no matter the odds.</p>
                                 <p><strong>Requirements: </strong> Constitution 2 or higher and the Willpower (Self-Discipline) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_commando_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3146,7 +3171,7 @@
                             <div class="justify">
                                 <p>You claim authority and leadership in an organization.</p>
                                 <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Persuasion) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                 <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_executive_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3193,7 +3218,7 @@
                                         <option value="hearing">ACC (Rifles)</option>
                                     </select>
                                 </div>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_gunfighter_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3240,7 +3265,7 @@
                             <div class="justify">
                                 <p>You excel at the use and abuse of computer systems.</p>
                                 <p><strong>Requirements: </strong> Intelligence 2 or higher and the Intelligence (Technology) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                 <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_hacker_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3279,7 +3304,7 @@
                             <div class="justify">
                                 <p>You’re a skilled detective.</p>
                                 <p><strong>Requirements: </strong> Perception and Intelligence 2 or higher and least one Perception focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_investigator_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3317,7 +3342,7 @@
                             <div class="justify">
                                 <p>You are a master of hand-to-hand combat.</p>
                                 <p><strong>Requirements: </strong> Fighting 2 or better and at least Novice rank in one hand-to-hand combat style, including Dual Weapon Style, Grappling Style, Overwhelm Style, Self-Defense Style, Single Weapon Style, Striking Style, or Two-Handed Style. Other combat style talents like these may also satisfy this requirement, at the GM’s discretion</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_martial_artist_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3355,7 +3380,7 @@
                             <div class="justify">
                                 <p>You are a crack shot.</p>
                                 <p><strong>Requirements: </strong> Accuracy 3 or better and the Accuracy (Rifles) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_sniper_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3393,7 +3418,7 @@
                             <div class="justify">
                                 <p>You know people, and how to get what you want from them.</p>
                                 <p><strong>Requirements: </strong> Communication and Perception 2 or higher</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                 <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_socialite_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3431,7 +3456,7 @@
                             <div class="justify">
                                 <p>You can sway people with your performance, personal charisma, and fame.</p>
                                 <p><strong>Requirements: </strong> Communication 2 or higher and the Communication (Performing) focus</p>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_star_novice" class="styled-toggle" value="1" checked/>
                                         <span class="prof-button-text">NOV</span>
@@ -3469,36 +3494,42 @@
                             <div class="justify">
                                 <p>You are adept at stealing things and avoiding getting caught.</p>
                                 <p><strong>Requirements: </strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
-                                <div class="justify">
-                                    <div class="dynamic-subsection blue-bar">
-                                        <input type="checkbox" class="styled-sibling" name="attr_spec_thief_soh_1" value="1" />
-                                        <span class="white-text">&plusmn; Sleight of Hand</span>
+                                <div class="blue-bar white-text-notran margin-bottom-5">Choose focus</div>
+                                <div class="left spec-bonuses">
+                                    <div class="spec-bonus position-relative">
+                                        <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_soh_1" value="1" />
+                                        <label class="bonus-bar-label position-absolute">Sleight of Hand</label>
                                     </div>
-                                    <div class="dynamic-subsection blue-bar">
-                                        <input type="checkbox" class="styled-sibling" name="attr_spec_thief_stealth_1" value="1" />
-                                        <span class="white-text">&plusmn; Stealth</span>
+                                    <div class="spec-bonus position-relative">
+                                        <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_stealth_1" value="1" />
+                                        <label class="bonus-bar-label position-absolute">Stealth</label>
                                     </div>
                                 </div>
-                                <div class="dynamic-subsection-talents justify margin-top-10">
+                                <div class="dynamic-subsection-specializations justify margin-top-10">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_thief_novice" class="styled-toggle" value="1" checked/>
-                                        <span class="prof-button-text">NOV</span>
+                                        <span class="prof-button-text">NOVICE</span>
                                     </span>
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_thief_expert" class="styled-toggle" value="1" />
-                                        <span class="prof-button-text">EXP</span>
+                                        <span class="prof-button-text">EXPERT</span>
                                     </span>
+                                </div>
+                                <div class="dynamic-subsection-specializations-wide margin-top-5">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_thief_master" class="styled-toggle unhide-content" value="1" />
-                                        <span class="prof-button-text">MAS</span>
+                                        <span class="prof-button-text">MASTER</span>
                                         <div class="hidden-if-unchecked">
-                                            <div class="dynamic-subsection blue-bar">
-                                                <input type="checkbox" class="styled-sibling" name="attr_spec_thief_soh_2" value="1" />
-                                                <span class="white-text">&plusmn; Sleight of Hand</span>
-                                            </div>
-                                            <div class="dynamic-subsection blue-bar">
-                                                <input type="checkbox" class="styled-sibling" name="attr_spec_thief_stealth_2" value="1" />
-                                                <span class="white-text">&plusmn; Stealth</span>
+                                            <div class="blue-bar white-text-notran margin-bottom-5">Choose focus</div>
+                                            <div class="left spec-bonuses">
+                                                <div class="spec-bonus position-relative">
+                                                    <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_soh_2" value="1" />
+                                                    <label class="bonus-bar-label position-absolute">Sleight of Hand</label>
+                                                </div>
+                                                <div class="spec-bonus position-relative">
+                                                    <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_stealth_2" value="1" />
+                                                    <label class="bonus-bar-label position-absolute">Stealth</label>
+                                                </div>
                                             </div>
                                         </div>
                                         <input type="number" disabled="true" class="invisible" name="attr_focus_sleight_of_hand_mod_1" value="@{spec_thief} * (@{spec_thief_soh_1} + (@{spec_thief_master}*@{spec_thief_soh_2}))" />
@@ -6318,7 +6349,6 @@
 
 <script type="text/worker">
     // Check requirements for all Talents and Specializations
-
     on("change:level change:accuracy change:communication change:constitution change:dexterity change:fighting change:intelligence change:perception change:strength change:willpower change:focus_acrobatics change:focus_research change:focus_driving change:focus_piloting change:focus_crafting change:focus_expression change:focus_deception change:focus_empathy change:focus_self_discipline change:focus_persuasion change:focus_security change:focus_technology change:focus_hearing change:focus_intuition change:focus_searching change:focus_seeing change:focus_smelling change:focus_survival change:focus_tasting change:focus_touching change:focus_tracking change:focus_rifles change:focus_performing change:focus_sleight_of_hand change:focus_stealth", (info) => {
         getAttrs(['level', 'accuracy', 'communication', 'constitution', 'dexterity', 'fighting', 'intelligence', 'perception', 'strength', 'willpower', 'focus_acrobatics', 'focus_research', 'focus_driving', 'focus_piloting', 'focus_crafting', 'focus_expression', 'focus_deception', 'focus_empathy', 'focus_self_discipline', 'focus_persuasion', 'focus_security', 'focus_technology', 'focus_hearing', 'focus_intuition', 'focus_searching', 'focus_seeing', 'focus_smelling', 'focus_survival', 'focus_tasting', 'focus_touching', 'focus_tracking', 'focus_rifles', 'focus_performing', 'focus_sleight_of_hand', 'focus_stealth'], (values) => {
             if (values.level >= 11) {
