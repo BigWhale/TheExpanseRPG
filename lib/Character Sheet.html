@@ -3494,22 +3494,26 @@
                             <div class="justify">
                                 <p>You are adept at stealing things and avoiding getting caught.</p>
                                 <p><strong>Requirements: </strong> Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses</p>
-                                <div class="blue-bar white-text-notran margin-bottom-5">Choose focus</div>
-                                <div class="left spec-bonuses">
-                                    <div class="spec-bonus position-relative">
-                                        <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_soh_1" value="1" />
-                                        <label class="bonus-bar-label position-absolute">Sleight of Hand</label>
-                                    </div>
-                                    <div class="spec-bonus position-relative">
-                                        <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_stealth_1" value="1" />
-                                        <label class="bonus-bar-label position-absolute">Stealth</label>
-                                    </div>
-                                </div>
-                                <div class="dynamic-subsection-specializations justify margin-top-10">
+                                <div class="dynamic-subsection-specializations-wide margin-top-5">
                                     <span class="prof-button sheet-position-relative">
-                                        <input type="checkbox" name="attr_spec_thief_novice" class="styled-toggle" value="1" checked/>
+                                        <input type="checkbox" name="attr_spec_thief_novice" class="styled-toggle unhide-content" value="1" checked/>
                                         <span class="prof-button-text">NOVICE</span>
+                                        <div class="hidden-if-unchecked">
+                                            <div class="blue-bar white-text-notran margin-bottom-5">Choose focus</div>
+                                            <div class="left spec-bonuses">
+                                                <div class="spec-bonus position-relative">
+                                                    <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_soh_1" value="1" />
+                                                    <label class="bonus-bar-label position-absolute">Sleight of Hand</label>
+                                                </div>
+                                                <div class="spec-bonus position-relative">
+                                                    <input type="checkbox" class="styled-sibling position-absolute" name="attr_spec_thief_stealth_1" value="1" />
+                                                    <label class="bonus-bar-label position-absolute">Stealth</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </span>
+                                </div>
+                                <div class="dynamic-subsection-specializations-wide margin-top-5">
                                     <span class="prof-button sheet-position-relative">
                                         <input type="checkbox" name="attr_spec_thief_expert" class="styled-toggle" value="1" />
                                         <span class="prof-button-text">EXPERT</span>
